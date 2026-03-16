@@ -1,6 +1,7 @@
 // === Service Worker Registration ===
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').catch(() => {});
+  const swPath = location.pathname.includes('france-trip-2026') ? '/france-trip-2026/sw.js' : '/sw.js';
+  navigator.serviceWorker.register(swPath, { scope: location.pathname.includes('france-trip-2026') ? '/france-trip-2026/' : '/' }).catch(() => {});
 }
 
 // === Tab Navigation ===

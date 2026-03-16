@@ -1,9 +1,10 @@
-const CACHE_NAME = 'france-trip-v5';
+const CACHE_NAME = 'france-trip-v6';
+const BASE = '/france-trip-2026/';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/app.js'
+  BASE,
+  BASE + 'index.html',
+  BASE + 'style.css',
+  BASE + 'app.js'
 ];
 
 self.addEventListener('install', event => {
