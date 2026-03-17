@@ -536,14 +536,21 @@ nav button.active {
 .transit-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 14px;
+  gap: 8px;
+}
+
+.transit-row strong {
+  flex-shrink: 0;
+  min-width: 70px;
 }
 
 .transit-row span {
   color: var(--text-secondary);
-  font-size: 13px;
+  font-size: 12px;
   text-align: right;
+  line-height: 1.4;
 }
 
 /* === PHRASES === */
@@ -670,6 +677,77 @@ nav button.active {
 
 .checklist-item label {
   line-height: 1.4;
+}
+
+/* === GOOGLE MAPS LINKS === */
+.maps-link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+/* === TOY STORE MAP === */
+.toy-map-card {
+  margin-top: 12px;
+}
+
+.toy-map-container {
+  margin: 10px 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #fafafa;
+  border: 1px solid var(--border);
+}
+
+.toy-map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.toy-map-svg a { cursor: pointer; }
+.toy-map-svg a:hover circle { opacity: 1; }
+
+.geo-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.geo-btn:active { opacity: 0.85; }
+
+.geo-icon {
+  font-size: 16px;
+}
+
+.geo-status {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 6px;
+  min-height: 16px;
+}
+
+@keyframes geo-pulse {
+  0% { r: 6; opacity: 0.4; }
+  100% { r: 18; opacity: 0; }
+}
+
+#geo-pulse {
+  animation: geo-pulse 2s ease-out infinite;
 }
 
 /* === LINKS === */

@@ -145,3 +145,46 @@ window.toggleCheck = function(i) {
 };
 
 renderChecklist();
+
+// === Geolocation for Toy Store Map ===
+const MAP_BOUNDS = {
+  minLat: 48.845, maxLat: 48.875,
+  minLon: 2.320, maxLon: 2.380,
+  width: 340, height: 280
+};
+
+function latLonToSvg(lat, lon) {
+  const x = (lon - MAP_BOUNDS.minLon) / (MAP_BOUNDS.maxLon - MAP_BOUNDS.minLon) * MAP_BOUNDS.width;
+  const y = (MAP_BOUNDS.maxLat - lat) / (MAP_BOUNDS.maxLat - MAP_BOUNDS.minLat) * MAP_BOUNDS.height;
+  return { x, y };
+}
+
+window.showMyLocation = function() {
+  const status = document.getElementById('geo-status');
+  const dot = document.getElementById('geo-dot');
+  const pulse = document.getElementById('geo-pulse');
+  if (!navigator.geolocation) {
+    if (status) status.textContent = 'Geolocation not supported on this device.';
+    return;
+  }
+  if (status) status.textContent = 'Finding your location...';
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const { latitude, longitude } = pos.coords;
+      const { x, y } = latLonToSvg(latitude, longitude);
+      if (x < 0 || x > MAP_BOUNDS.width || y < 0 || y > MAP_BOUNDS.height) {
+        if (status) status.textContent = "You're outside the map area. Open Google Maps instead.";
+        if (dot) dot.style.display = 'none';
+        if (pulse) pulse.style.display = 'none';
+        return;
+      }
+      if (dot) { dot.setAttribute('cx', x); dot.setAttribute('cy', y); dot.style.display = ''; }
+      if (pulse) { pulse.setAttribute('cx', x); pulse.setAttribute('cy', y); pulse.style.display = ''; }
+      if (status) status.textContent = 'Blue dot = your location';
+    },
+    err => {
+      if (status) status.textContent = err.code === 1 ? 'Location access denied. Check Settings > Safari > Location.' : 'Could not get location. Try again.';
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+};
