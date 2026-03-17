@@ -13,513 +13,777 @@
 <body>
 
 <header>
-  <h1>France 2026</h1>
-  <div class="subtitle">April 1 - 10 &middot; Family of 4</div>
+  <div class="header-top">
+    <h1>France 2026</h1>
+    <div class="countdown" id="countdown"></div>
+  </div>
 </header>
 
 <nav id="tabs">
-  <button class="active" data-tab="overview">Overview</button>
-  <button data-tab="burgundy">Burgundy</button>
-  <button data-tab="paris">Paris</button>
-  <button data-tab="kids">Kids</button>
+  <button class="active" data-tab="schedule">Schedule</button>
+  <button data-tab="hotel">Hotel</button>
   <button data-tab="phrases">Phrases</button>
-  <button data-tab="practical">Practical</button>
+  <button data-tab="essentials">Essentials</button>
 </nav>
 
-<!-- ===================== OVERVIEW ===================== -->
-<div class="section active" id="overview">
+<!-- ===================== SCHEDULE ===================== -->
+<div class="section active" id="schedule">
 
-  <div class="countdown">
-    <div class="days" id="countdown-days">--</div>
-    <div>days until departure</div>
+  <div class="day-picker" id="day-picker">
+    <button class="day-btn active" data-day="apr2">
+      <span class="day-name">Thu</span>
+      <span class="day-num">2</span>
+    </button>
+    <button class="day-btn" data-day="apr3">
+      <span class="day-name">Fri</span>
+      <span class="day-num">3</span>
+    </button>
+    <button class="day-btn" data-day="apr4">
+      <span class="day-name">Sat</span>
+      <span class="day-num">4</span>
+    </button>
+    <button class="day-btn" data-day="apr5">
+      <span class="day-name">Sun</span>
+      <span class="day-num">5</span>
+    </button>
+    <button class="day-btn paris-btn" data-day="apr6">
+      <span class="day-name">Mon</span>
+      <span class="day-num">6</span>
+    </button>
+    <button class="day-btn paris-btn" data-day="apr7">
+      <span class="day-name">Tue</span>
+      <span class="day-num">7</span>
+    </button>
+    <button class="day-btn paris-btn" data-day="apr8">
+      <span class="day-name">Wed</span>
+      <span class="day-num">8</span>
+    </button>
+    <button class="day-btn paris-btn" data-day="apr9">
+      <span class="day-name">Thu</span>
+      <span class="day-num">9</span>
+    </button>
+    <button class="day-btn paris-btn" data-day="apr10">
+      <span class="day-name">Fri</span>
+      <span class="day-num">10</span>
+    </button>
   </div>
 
-  <div class="card flight-card">
-    <div style="font-size:12px;opacity:0.6;text-transform:uppercase;letter-spacing:1px">Outbound</div>
-    <div class="route">
-      <div><div class="airport">EWR</div><div class="time">11:00 PM</div></div>
-      <div class="arrow">&rarr;</div>
-      <div style="text-align:right"><div class="airport">ORY</div><div class="time">12:15 PM +1</div></div>
+  <!-- ===== Apr 2 ===== -->
+  <div class="day-content active" id="day-apr2">
+    <div class="day-title">
+      <h2>Thursday, April 2</h2>
+      <span class="location-badge burgundy">Burgundy</span>
     </div>
-    <div class="meta">
-      <span>Wed Apr 1</span>
-      <span>French bee BF721</span>
-      <span>7h 15m</span>
+
+    <div class="card confirmed-card">
+      <div class="confirmed-label">CONFIRMED</div>
+      <h3>Flight &mdash; EWR to Orly</h3>
+      <div class="flight-mini">
+        <div class="flight-route">
+          <div class="flight-point"><span class="airport-code">EWR</span><span class="flight-time">11:00 PM Apr 1</span></div>
+          <div class="flight-arrow">&rarr;</div>
+          <div class="flight-point right"><span class="airport-code">ORY</span><span class="flight-time">12:15 PM Apr 2</span></div>
+        </div>
+        <div class="flight-meta">French bee BF721 &middot; Conf G958GB &middot; 7h 15m</div>
+      </div>
     </div>
-    <div class="meta" style="margin-top:4px"><span>Confirmation: G958GB</span></div>
+
+    <div class="card suggestion-card">
+      <h3>Arrival &amp; Drive to Burgundy</h3>
+      <p class="card-desc">Brother picks up at Orly. Drive south to St Sernin du Plain (~3 hrs).</p>
+      <span class="card-tag transport">Transport</span>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card suggestion-card">
+      <h3>Easy First Night</h3>
+      <p class="card-desc">Stock up at a supermarket on the drive, or head into Beaune for a simple restaurant dinner. You'll be jet-lagged &mdash; keep it low-key.</p>
+      <span class="card-tag food">Food</span>
+    </div>
   </div>
 
-  <div class="card flight-card">
-    <div style="font-size:12px;opacity:0.6;text-transform:uppercase;letter-spacing:1px">Return</div>
-    <div class="route">
-      <div><div class="airport">ORY</div><div class="time">6:50 PM</div></div>
-      <div class="arrow">&rarr;</div>
-      <div style="text-align:right"><div class="airport">EWR</div><div class="time">9:00 PM</div></div>
+  <!-- ===== Apr 3 ===== -->
+  <div class="day-content" id="day-apr3">
+    <div class="day-title">
+      <h2>Friday, April 3</h2>
+      <span class="location-badge burgundy">Burgundy</span>
     </div>
-    <div class="meta">
-      <span>Fri Apr 10</span>
-      <span>French bee BF720</span>
-      <span>8h 10m</span>
+
+    <div class="card suggestion-card">
+      <h3>Hospices de Beaune</h3>
+      <p class="card-desc">Stunning 15th-century hospital with colorful tile roof. One of Burgundy's most iconic buildings. Audio guides available.</p>
+      <p class="card-address">Rue de l'Hotel-Dieu, Beaune</p>
+      <span class="card-tag culture">Culture</span>
     </div>
-    <div class="meta" style="margin-top:4px"><span>Confirmation: G958GB</span></div>
+
+    <div class="card suggestion-card">
+      <h3>Beaune Ramparts Walk</h3>
+      <p class="card-desc">Walk along the old town walls. Easy, scenic loop around the medieval center. Good for kids to run around.</p>
+      <span class="card-tag outdoor">Outdoor</span>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>More Ideas</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Beaune Market</h3>
+          <p class="card-desc">Saturday is the big market day, but there are smaller markets through the week. Browse local cheese, charcuterie, and produce.</p>
+          <span class="card-tag food">Food</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider">Lunch</div>
+    <div class="card suggestion-card">
+      <h3>Le Comptoir des Tontons</h3>
+      <p class="card-desc">Cozy Beaune bistro with excellent Burgundian fare. Wine barrel decor, friendly service.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Caves Madeleine</h3>
+      <p class="card-desc">Atmospheric wine-bar restaurant in Beaune's old caves. Regional dishes paired with local wines.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card suggestion-card">
+      <h3>Dinner in Beaune or at Home</h3>
+      <p class="card-desc">Cook at the house with market finds, or try one of Beaune's restaurants for a leisurely Burgundy dinner.</p>
+      <span class="card-tag food">Food</span>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Trip at a Glance</h3>
-    <ul>
-      <li><strong>Apr 2 (Thu)</strong> &mdash; Arrive Orly 12:15 PM. Brother picks you up, drives to St Sernin du Plain</li>
-      <li><strong>Apr 3-5 (Fri-Sun)</strong> &mdash; Burgundy countryside: villages, chateaux, markets</li>
-      <li><strong>Apr 6 (Mon)</strong> &mdash; Train from Chalon-sur-Saone to Paris Gare de Lyon (~2.5-3.5 hrs), check in at Maison Breguet (8 Rue Breguet, 75011)</li>
-      <li><strong>Apr 7-9 (Tue-Thu)</strong> &mdash; Paris with kids</li>
-      <li><strong>Apr 10 (Fri)</strong> &mdash; Last morning in Paris, head to Orly by ~4 PM</li>
-    </ul>
+  <!-- ===== Apr 4 ===== -->
+  <div class="day-content" id="day-apr4">
+    <div class="day-title">
+      <h2>Saturday, April 4</h2>
+      <span class="location-badge burgundy">Burgundy</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Chateau de la Rochepot</h3>
+      <p class="card-desc">Fairy-tale medieval castle with colorful Burgundian tile roof. Short drive from St Sernin. Kids will love the towers and drawbridge.</p>
+      <p class="card-address">Rochepot, ~20 min drive</p>
+      <span class="card-tag culture">Culture</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Voie Verte Cycling</h3>
+      <p class="card-desc">Flat, car-free cycling path through the vineyards. Rent bikes locally. Perfect for the family.</p>
+      <span class="card-tag outdoor">Outdoor</span> <span class="card-tag kids">Kids</span>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Wine Tasting</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Chateau de Santenay</h3>
+          <p class="card-desc">Wine estate with tastings. Many Burgundy chateaux welcome families &mdash; kids get grape juice while parents taste.</p>
+          <span class="card-tag food">Food</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Chateau de Meursault</h3>
+          <p class="card-desc">Famous white wine estate. Beautiful cellars. Tastings available.</p>
+          <span class="card-tag food">Food</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card suggestion-card">
+      <h3>Auberge du Vieux Vigneron</h3>
+      <p class="card-desc">Classic Burgundy auberge with regional specialties. Cozy village atmosphere.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Le Montrachet</h3>
+      <p class="card-desc">Upscale option in Puligny-Montrachet. Excellent wine list, naturally.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Cook at Home</h3>
+      <p class="card-desc">Pick up ingredients at the market and cook a family dinner at the house.</p>
+      <span class="card-tag food">Food</span>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Your Notes</h3>
-    <p style="font-size:13px;color:var(--muted)">Jot anything here &mdash; saved locally on your device.</p>
-    <textarea class="note-field" id="note-overview" placeholder="Hotel details, rental car info, ideas..."></textarea>
+  <!-- ===== Apr 5 ===== -->
+  <div class="day-content" id="day-apr5">
+    <div class="day-title">
+      <h2>Sunday, April 5</h2>
+      <span class="location-badge burgundy">Burgundy</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Falaise de Cormot Hike</h3>
+      <p class="card-desc">Scenic cliff walk with vineyard views. Moderate difficulty &mdash; doable with kids but bring snacks and water.</p>
+      <span class="card-tag outdoor">Outdoor</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Nolay Village</h3>
+      <p class="card-desc">Charming medieval village with covered market hall. Good for a wander and coffee stop.</p>
+      <span class="card-tag culture">Culture</span>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Alternative: Parc de l'Auxois</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Parc de l'Auxois</h3>
+          <p class="card-desc">Animal park and amusement park. Good rainy-day or energy-burning option for the kids. Has rides, animals, and picnic areas.</p>
+          <span class="card-tag kids">Kids</span> <span class="card-tag outdoor">Outdoor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card suggestion-card">
+      <h3>Last Burgundy Dinner</h3>
+      <p class="card-desc">Final evening before heading to Paris tomorrow. Cook something special or go out in Beaune.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+  </div>
+
+  <!-- ===== Apr 6 ===== -->
+  <div class="day-content" id="day-apr6">
+    <div class="day-title">
+      <h2>Monday, April 6</h2>
+      <span class="location-badge paris">Paris</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Train to Paris</h3>
+      <p class="card-desc">Chalon-sur-Saone to Gare de Lyon. ~1.5 hrs by TGV. Book tickets on SNCF Connect app.</p>
+      <span class="card-tag transport">Transport</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Check In: Maison Breguet</h3>
+      <p class="card-desc">5-star boutique hotel. Drop bags, get oriented.</p>
+      <p class="card-address">8 Rue Breguet, 75011 &middot; Metro Breguet-Sabin</p>
+      <span class="card-tag essential">Hotel</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Neighborhood Walk</h3>
+      <p class="card-desc">Explore the 11th arrondissement. Walk to Place des Vosges (Paris's oldest planned square, 10 min). Let kids run in the park.</p>
+      <span class="card-tag outdoor">Outdoor</span>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card suggestion-card">
+      <h3>Cafe des Anges</h3>
+      <p class="card-desc">Local neighborhood bistro near the hotel. Casual, good food, easy first-night option.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Paris Hanoi</h3>
+      <p class="card-desc">Vietnamese restaurant in the neighborhood. Great pho and banh mi. Kids usually love it.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Hotel Restaurant</h3>
+      <p class="card-desc">Maison Breguet has an on-site restaurant with a glass-roof dining room. Zero commute after a travel day.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+  </div>
+
+  <!-- ===== Apr 7 ===== -->
+  <div class="day-content" id="day-apr7">
+    <div class="day-title">
+      <h2>Tuesday, April 7</h2>
+      <span class="location-badge paris">Paris</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Musee d'Orsay</h3>
+      <p class="card-desc">Impressionist masterpieces in a stunning old train station. Monet, Renoir, Van Gogh, Degas. Less overwhelming than the Louvre for kids.</p>
+      <p class="card-address">1 Rue de la Legion d'Honneur, 75007</p>
+      <span class="card-tag culture">Culture</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Jardin du Luxembourg</h3>
+      <p class="card-desc">Paris's most beloved park. Sailboats on the pond (rent miniature boats!), large playground, and a puppet theater (marionnettes). The kids will not want to leave.</p>
+      <p class="card-address">75006 Paris</p>
+      <span class="card-tag outdoor">Outdoor</span> <span class="card-tag kids">Kids</span>
+    </div>
+
+    <div class="card-divider">Lunch</div>
+    <div class="card suggestion-card">
+      <h3>Lunch Near Luxembourg</h3>
+      <p class="card-desc">Lots of options within 5 minutes of the garden.</p>
+    </div>
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Lunch Spots</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Rue de Seine / Rue de Buci</h3>
+          <p class="card-desc">Cafes, bakeries, and market stalls. 5 min from the garden.</p>
+          <span class="card-tag food">Food</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Boulangerie Poilane</h3>
+          <p class="card-desc">Famous bread, great cookies. A Paris institution.</p>
+          <p class="card-address">8 Rue du Cherche-Midi</p>
+          <span class="card-tag food">Food</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Amorino</h3>
+          <p class="card-desc">Flower-shaped gelato. Multiple locations. Kids will be ecstatic.</p>
+          <span class="card-tag food">Food</span> <span class="card-tag kids">Kids</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card confirmed-card">
+      <div class="confirmed-label">CONFIRMED &middot; RESERVATION</div>
+      <h3>Brasserie Rosie-Lou</h3>
+      <p class="card-desc"><strong>Tuesday April 7 at 6:45 PM &middot; Party of 8</strong></p>
+      <p class="card-address">Bonne Nouvelle area</p>
+      <p class="card-detail">Phone: <a href="tel:+33142360020">+33 1 42 36 00 20</a></p>
+      <p class="card-warning">Free cancellation until April 7 at 6:45 AM. After that, credit card will be charged.</p>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Backup Dinner Options</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Bistro Paul Bert</h3>
+          <p class="card-desc">One of Paris's most beloved bistros. Legendary steak-frites, seasonal specials. The 11-year-old will feel very grown-up.</p>
+          <p class="card-address">87 Rue de la Roquette</p>
+          <span class="card-tag food">Food</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Chez HE</h3>
+          <p class="card-desc">Chinese restaurant with a 350 sqm basement playground for kids ages 2-12. Excellent food AND the kids can play. Secret weapon for decompressing.</p>
+          <span class="card-tag food">Food</span> <span class="card-tag kids">Kids</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Le Servan</h3>
+          <p class="card-desc">Franco-Asian fusion, relaxed vibe. Great for adventurous eaters. Smaller portions good for sharing.</p>
+          <p class="card-address">32 Rue Saint-Maur (10-min walk)</p>
+          <span class="card-tag food">Food</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Apr 8 ===== -->
+  <div class="day-content" id="day-apr8">
+    <div class="day-title">
+      <h2>Wednesday, April 8</h2>
+      <span class="location-badge paris">Paris</span>
+    </div>
+
+    <div class="card confirmed-card">
+      <div class="confirmed-label">CONFIRMED &middot; PAID</div>
+      <h3>Louvre Early Access + Seine Cruise</h3>
+      <p class="card-desc"><strong>Wednesday April 8 at 9:30 AM</strong></p>
+      <div class="booking-details">
+        <div class="booking-row"><span>Adults</span><span>2 &times; &euro;93 = &euro;186</span></div>
+        <div class="booking-row"><span>Children (3-17)</span><span>2 &times; &euro;65 = &euro;130</span></div>
+        <div class="booking-row total"><span>Total</span><span>&euro;316 paid</span></div>
+      </div>
+      <p class="card-detail" style="margin-top:10px"><strong>Includes</strong>: Early access to Louvre with direct access to the Mona Lisa + Seine River Cruise</p>
+      <p class="card-detail"><strong>Getting there</strong>: Metro Line 1 from Bastille &rarr; Palais Royal-Musee du Louvre (4 stops, ~10 min). Arrive by 9:15 AM.</p>
+      <p class="card-detail"><strong>Tips with kids</strong>: Don't try to see everything. Pick 2-3 highlights: Winged Victory (dramatic staircase), Egyptian mummies, Napoleon III apartments. Plan ~2-3 hours max.</p>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Seine River Cruise</h3>
+      <p class="card-desc">Included with Louvre tickets. After the museum, take a break and hop on the boat (~1 hr). See Notre-Dame, the Eiffel Tower, and the bridges without walking. The 5-year-old will love being on a boat.</p>
+      <span class="card-tag outdoor">Outdoor</span> <span class="card-tag kids">Kids</span>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Afternoon Options</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Eiffel Tower</h3>
+          <p class="card-desc">Natural add-on since you'll see it from the boat. Book summit tickets well in advance. Alternative: walk stairs to 2nd floor (674 steps), or just admire from Trocadero &mdash; arguably a better view and free.</p>
+          <p class="card-address">Champ de Mars, 75007</p>
+          <span class="card-tag culture">Culture</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Cite des Sciences (Rainy Day Backup)</h3>
+          <p class="card-desc">Enormous science museum with dedicated Cite des Enfants sections (ages 2-7 and 5-12). Hands-on, interactive, genuinely fun. Book timed slots.</p>
+          <p class="card-address">30 Ave Corentin Cariou, 75019</p>
+          <span class="card-tag kids">Kids</span> <span class="card-tag culture">Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider">Dinner</div>
+    <div class="card suggestion-card">
+      <h3>Brasserie Martin</h3>
+      <p class="card-desc">Stylish 11th arr. spot. Seasonal French menu with traditional homemade dishes. Nice atmosphere, not too formal for kids.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Clamato</h3>
+      <p class="card-desc">Septime's casual sister restaurant on Rue de Charonne. Seafood small plates, walk-in only. Arrive by 7 PM.</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Le Bouillon Chartier</h3>
+      <p class="card-desc">Paris institution since 1896. Gorgeous belle epoque hall. Classic French food at ~15 EUR/person. Kids love the grand room. No reservations, short line.</p>
+      <p class="card-address">7 Rue du Faubourg Montmartre, 75009</p>
+      <span class="card-tag food">Food</span>
+    </div>
+  </div>
+
+  <!-- ===== Apr 9 ===== -->
+  <div class="day-content" id="day-apr9">
+    <div class="day-title">
+      <h2>Thursday, April 9</h2>
+      <span class="location-badge paris">Paris</span>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Montmartre Morning</h3>
+      <p class="card-desc">Hilly, charming, village-feel neighborhood. Start at the bottom and work up to Sacre-Coeur.</p>
+      <span class="card-tag culture">Culture</span>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Montmartre Highlights</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Sacre-Coeur</h3>
+          <p class="card-desc">Free to enter. Amazing views from the steps. Inside is impressive too.</p>
+          <span class="card-tag culture">Culture</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Place du Tertre</h3>
+          <p class="card-desc">Artists' square. Get a caricature drawn of the kids (negotiate price first, ~20-30 EUR).</p>
+          <span class="card-tag culture">Culture</span> <span class="card-tag kids">Kids</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Funicular</h3>
+          <p class="card-desc">Little cable car up the hill (uses a metro ticket). Kids love it.</p>
+          <span class="card-tag transport">Transport</span> <span class="card-tag kids">Kids</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Le Mur des Je t'aime (Wall of Love)</h3>
+          <p class="card-desc">"I love you" in 250+ languages. Quick stop in Square Jehan Rictus.</p>
+          <span class="card-tag culture">Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Afternoon Ideas</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Parc des Buttes-Chaumont</h3>
+          <p class="card-desc">Wild, hilly park with a temple on a rocky island. Great for running around. Less touristy.</p>
+          <span class="card-tag outdoor">Outdoor</span> <span class="card-tag kids">Kids</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Canal Saint-Martin</h3>
+          <p class="card-desc">Walk along the locks, watch boats pass through. Trendy neighborhood with good cafes.</p>
+          <span class="card-tag outdoor">Outdoor</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Le Marais Shopping</h3>
+          <p class="card-desc">Browse the Marais district. Kid-friendly: Merci concept store, BHV department store.</p>
+          <span class="card-tag culture">Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-divider">Last Dinner in Paris</div>
+    <div class="card suggestion-card">
+      <h3>Chez Janou</h3>
+      <p class="card-desc">Famous for the giant chocolate mousse bowl served family-style (they bring the whole pot!). Provencal menu. Book ahead.</p>
+      <p class="card-address">2 Rue Roger Verlomme, 75003 (10-min walk)</p>
+      <span class="card-tag food">Food</span> <span class="card-tag kids">Kids</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Le Relais de l'Entrecote</h3>
+      <p class="card-desc">No menu, no choices &mdash; just steak-frites with legendary secret sauce. Walnut salad, then steak in two rounds. Kids love the simplicity. Expect a short line.</p>
+      <p class="card-address">20 Rue Marbeuf, 75008</p>
+      <span class="card-tag food">Food</span>
+    </div>
+    <div class="card suggestion-card">
+      <h3>Septime</h3>
+      <p class="card-desc">Special-occasion tasting menu. Book well in advance. Best as a date night if you can arrange a sitter through the hotel.</p>
+      <p class="card-address">80 Rue de Charonne (5-min walk)</p>
+      <span class="card-tag food">Food</span>
+    </div>
+  </div>
+
+  <!-- ===== Apr 10 ===== -->
+  <div class="day-content" id="day-apr10">
+    <div class="day-title">
+      <h2>Friday, April 10</h2>
+      <span class="location-badge paris">Paris</span>
+    </div>
+
+    <div class="card confirmed-card">
+      <div class="confirmed-label">CONFIRMED</div>
+      <h3>Flight &mdash; Orly to EWR</h3>
+      <div class="flight-mini">
+        <div class="flight-route">
+          <div class="flight-point"><span class="airport-code">ORY</span><span class="flight-time">6:50 PM</span></div>
+          <div class="flight-arrow">&rarr;</div>
+          <div class="flight-point right"><span class="airport-code">EWR</span><span class="flight-time">9:00 PM</span></div>
+        </div>
+        <div class="flight-meta">French bee BF720 &middot; Conf G958GB</div>
+      </div>
+      <p class="card-detail" style="margin-top:8px"><strong>Leave hotel by 3:00 PM</strong> &middot; Taxi/Uber to Orly ~&euro;35</p>
+    </div>
+
+    <div class="card suggestion-card">
+      <h3>Last Morning in Paris</h3>
+      <p class="card-desc">No agenda. Get croissants, sit in a park, soak it in. A few ideas below.</p>
+      <span class="card-tag outdoor">Outdoor</span>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Morning Ideas</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Notre-Dame Area</h3>
+          <p class="card-desc">Walk around the exterior (reconstruction ongoing but the area is beautiful). Ile de la Cite and Ile Saint-Louis have great ice cream (Berthillon).</p>
+          <span class="card-tag culture">Culture</span>
+        </div>
+        <div class="card suggestion-card">
+          <h3>Shakespeare &amp; Company</h3>
+          <p class="card-desc">Most famous English-language bookshop in the world. Right across from Notre-Dame. The 11-year-old will love browsing.</p>
+          <p class="card-address">37 Rue de la Bucherie, 75005</p>
+          <span class="card-tag culture">Culture</span> <span class="card-tag kids">Kids</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <span>Getting to Orly</span>
+        <span class="toggle-icon">+</span>
+      </button>
+      <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Transport Options</h3>
+          <p class="card-desc">Be at Orly by ~4:00 PM.</p>
+          <ul class="card-list">
+            <li><strong>Taxi/Uber</strong>: ~&euro;35 flat rate. Easiest with kids + luggage</li>
+            <li><strong>Orlyval</strong>: Automated train from Antony (RER B). ~35 min, ~&euro;12/adult</li>
+            <li><strong>From hotel</strong>: Line 8 Bastille &rarr; Concorde, RER C &rarr; Pont de Rungis, then Orlyval. Or just grab a taxi</li>
+          </ul>
+          <span class="card-tag transport">Transport</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Schedule Notes</h3>
+    <textarea class="note-field" id="note-schedule" placeholder="Restaurant confirmations, timing adjustments, ideas..."></textarea>
   </div>
 </div>
 
-<!-- ===================== BURGUNDY ===================== -->
-<div class="section" id="burgundy">
+<!-- ===================== HOTEL ===================== -->
+<div class="section" id="hotel">
 
-  <div class="card" style="background:var(--burgundy-light);border-color:var(--burgundy)">
-    <h3 style="color:var(--burgundy)">St Sernin du Plain, Burgundy</h3>
-    <p>A tiny village in the Cote de Beaune wine region, between Beaune (20 min north) and Chalon-sur-Saone (20 min south). Rolling vineyards, medieval villages, and excellent food &mdash; just at a Burgundy pace.</p>
+  <div class="card hotel-hero">
+    <div class="hotel-star">5-Star Boutique</div>
+    <h2>Maison Breguet</h2>
+    <p class="hotel-address">8 Rue Breguet, 75011 Paris</p>
+    <p class="hotel-phone"><a href="tel:+33158303231">+33 1 58 30 32 31</a></p>
+    <div class="hotel-metro">
+      <div class="metro-line"><span class="metro-badge line5">5</span> Breguet-Sabin (1 min walk)</div>
+      <div class="metro-line"><span class="metro-badge line1">1</span><span class="metro-badge line5">5</span><span class="metro-badge line8">8</span> Bastille (2 min walk)</div>
+    </div>
+    <p class="card-detail" style="margin-top:10px">On-site restaurant with glass-roof dining room</p>
   </div>
 
-  <!-- Day 1: Arrival -->
-  <div class="day-header burgundy">Thursday, April 2 &mdash; Arrival Day</div>
+  <h3 class="section-heading">Transit from Hotel</h3>
 
-  <div class="card">
-    <h3>Getting There from Orly</h3>
-    <ul>
-      <li><strong>Your brother is picking you up at Orly</strong>. ~3 hr drive south via A6 to St Sernin du Plain</li>
-      <li><strong>Tip</strong>: Ask to stop at an Aire (rest stop) on the A6 &mdash; kids will need it after the flight. The ones past Auxerre are decent</li>
-      <li><strong>GPS</strong>: Download Burgundy region in Google Maps before you go</li>
-    </ul>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Louvre</strong><span>Line 1, 4 stops</span></div>
+  </div>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Eiffel Tower</strong><span>Line 8, 7 stops</span></div>
+  </div>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Musee d'Orsay</strong><span>Line 1 to Concorde or Bus 69</span></div>
+  </div>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Notre-Dame</strong><span>Line 1 to Hotel de Ville + walk</span></div>
+  </div>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Montmartre</strong><span>Line 5 to Gare du Nord, Line 4 to Anvers</span></div>
+  </div>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Luxembourg</strong><span>Line 1 to Chatelet, RER B</span></div>
+  </div>
+  <div class="card suggestion-card compact">
+    <div class="transit-row"><strong>Cite des Sciences</strong><span>Line 5 to Porte de Pantin</span></div>
   </div>
 
-  <div class="card">
-    <h3><span class="tag food">Food</span> First Night Easy Dinner</h3>
-    <p>You'll arrive late afternoon, jet-lagged. Options:</p>
-    <ul>
-      <li><strong>Stock up en route</strong>: Stop at a supermarket (Carrefour, Leclerc) near Beaune before the last stretch. Get bread, cheese, charcuterie, fruit, yogurt, and wine</li>
-      <li><strong>Beaune restaurants</strong>: If you have energy, <strong>Le Bistro de l'Hotel</strong> or <strong>La Ciboulette</strong> in central Beaune are family-OK</li>
-    </ul>
+  <h3 class="section-heading">Neighborhood Food</h3>
+
+  <div class="card suggestion-card">
+    <h3>Marche Richard Lenoir</h3>
+    <p class="card-desc">Open-air market on Thursdays and Sundays. Produce, cheese, rotisserie chicken, flowers. 5-min walk from hotel.</p>
+    <span class="card-tag food">Food</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Du Pain et des Idees</h3>
+    <p class="card-desc">One of Paris's best bakeries. Famous escargot pastries and pain des amis. Worth a special trip &mdash; or make it a morning ritual.</p>
+    <span class="card-tag food">Food</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Cafe des Anges</h3>
+    <p class="card-desc">Local neighborhood bistro. Casual, good food, easy option.</p>
+    <span class="card-tag food">Food</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Chez HE</h3>
+    <p class="card-desc">Chinese restaurant with a 350 sqm basement playground for kids ages 2-12. Excellent food AND the kids can play. High chairs, changing tables.</p>
+    <span class="card-tag food">Food</span> <span class="card-tag kids">Kids</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Bistro Paul Bert</h3>
+    <p class="card-desc">One of Paris's most beloved bistros. Legendary steak-frites, seasonal specials.</p>
+    <p class="card-address">87 Rue de la Roquette</p>
+    <span class="card-tag food">Food</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Septime / Clamato</h3>
+    <p class="card-desc">Septime: creative tasting menu, book way ahead. Clamato: its walk-in seafood sister. Both on Rue de Charonne, 5 min from hotel.</p>
+    <span class="card-tag food">Food</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Paris Hanoi</h3>
+    <p class="card-desc">Vietnamese restaurant in the neighborhood. Great pho and banh mi.</p>
+    <span class="card-tag food">Food</span>
+  </div>
+  <div class="card suggestion-card">
+    <h3>Brasserie Martin</h3>
+    <p class="card-desc">Stylish 11th arr. spot. Seasonal French menu, traditional homemade dishes.</p>
+    <span class="card-tag food">Food</span>
   </div>
 
-  <!-- Day 2: Friday -->
-  <div class="day-header burgundy">Friday, April 3 &mdash; Beaune Day</div>
+  <h3 class="section-heading">Kids Shops &amp; Bookstores</h3>
 
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Hospices de Beaune</h3>
-    <p class="place-name">Hotel-Dieu (Hospices de Beaune)</p>
-    <p class="place-detail">Stunning 15th-century hospital with the famous polychrome tile roof. The 11-year-old will appreciate the history; the 5-year-old will like the colorful roof and the old pharmacy room with weird jars.</p>
-    <p class="place-address">Rue de l'Hotel-Dieu, 21200 Beaune</p>
+  <div class="card suggestion-card">
+    <h3>Paris Zoo (Parc Zoologique)</h3>
+    <p class="card-desc">Modern zoo in Bois de Vincennes with 5 biozones. Plan at least 2 hours. Family pass: &euro;68 (2 adults + 2 kids). Metro Line 8 from Bastille to Porte Doree (6 stops).</p>
+    <p class="card-address">Avenue Daumesnil, 75012</p>
+    <span class="card-tag kids">Kids</span> <span class="card-tag outdoor">Outdoor</span>
   </div>
 
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Walk the Beaune Ramparts</h3>
-    <p class="place-detail">Beaune's old town is surrounded by medieval ramparts with a walking path. Easy 30-40 min loop. Nice for burning off energy after a flight day.</p>
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Toy Stores</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <h3>Le Petit Souk</h3>
+        <p class="card-desc">Curated toy shop in the Marais. Quirky games, smart toys, French brands. Not mass-market stuff.</p>
+        <p class="card-address">Le Marais (10-min walk from hotel)</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>Mandorla Palace</h3>
+        <p class="card-desc">Treasure trove of toys in the Marais: games, puzzles, stuffed animals, illustrated books, spinning tops. Feels like a magical attic.</p>
+        <p class="card-address">34 Rue Francois Miron, 75004 (15-min walk)</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>Le FanFans</h3>
+        <p class="card-desc">Whimsical toy shop. Specializes in magic tricks, metal carousels, and classic games. The 11-year-old will love the magic trick section.</p>
+        <p class="card-address">Le Marais, near Rue de Rivoli</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>Si Tu Veux (Jouer)</h3>
+        <p class="card-desc">Historic toy store in a Parisian covered passage. Beautiful setting, traditional European and wooden toys, dress-up costumes.</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>Otipi</h3>
+        <p class="card-desc">Family-friendly toy store near Luxembourg Gardens. Eco-friendly and educational toys. Good to combine with a Luxembourg visit.</p>
+        <p class="card-address">Near Metro Saint-Placide, 75006</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h3><span class="tag food">Food</span> Beaune Market</h3>
-    <p class="place-detail">Saturday is the big market day (Place de la Halle), but smaller markets run other days. Great for: fresh bread, local cheeses (Epoisses!), gougeres (cheese puffs &mdash; kids love these), roast chicken.</p>
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Bookstores</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <h3>Shakespeare &amp; Company</h3>
+        <p class="card-desc">Most famous English-language bookshop in the world. Right across from Notre-Dame. Beautiful, rambling, stacked floor-to-ceiling. Small kids section, magical upstairs reading nook. Attached cafe.</p>
+        <p class="card-address">37 Rue de la Bucherie, 75005</p>
+        <span class="card-tag kids">Kids</span> <span class="card-tag culture">Culture</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>Chantelivre</h3>
+        <p class="card-desc">Paris's largest independent children's bookshop. 50,000+ titles. Mostly French but great for illustrated books and Tintin/Asterix souvenirs.</p>
+        <p class="card-address">Saint-Germain-des-Pres, 75006</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>The Red Wheelbarrow / Red Balloon</h3>
+        <p class="card-desc">Beloved English-language bookshop. Red Balloon is Paris's first bilingual English-French kids' bookshop. Great for a book to read on the plane home.</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>WH Smith</h3>
+        <p class="card-desc">Largest English-language bookstore in Paris. Big children's section with reading corners. On Rue de Rivoli near the Tuileries.</p>
+        <p class="card-address">248 Rue de Rivoli, 75001</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+      <div class="card suggestion-card">
+        <h3>Galignani</h3>
+        <p class="card-desc">First English-language bookshop on the European continent (since 1801). Gorgeous store. Stocks English children's books including picture books and YA.</p>
+        <p class="card-address">224 Rue de Rivoli, 75001</p>
+        <span class="card-tag kids">Kids</span>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h3><span class="tag food">Food</span> Lunch in Beaune</h3>
-    <ul>
-      <li><strong>Le Comptoir des Tontons</strong> &mdash; Casual, local, excellent Burgundy classics. Ask for a kids portion of jambon persille</li>
-      <li><strong>Caves Madeleine</strong> &mdash; Cozy wine-bar/bistro, great cheese plates</li>
-      <li><strong>Boulangeries</strong> &mdash; For a quick lunch, any boulangerie will have sandwiches, quiche, and croque-monsieurs</li>
-    </ul>
-  </div>
-
-  <!-- Day 3: Saturday -->
-  <div class="day-header burgundy">Saturday, April 4 &mdash; Villages & Chateaux</div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Chateau de la Rochepot</h3>
-    <p class="place-detail">Gorgeous medieval castle with colorful Burgundian tile roofs, just 15 min from St Sernin du Plain. Fairy-tale looking. Guided tours available. Kids will love the towers and drawbridge. Check if open in early April (sometimes opens at Easter).</p>
-    <p class="place-address">21340 La Rochepot (5 km west of St Sernin)</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Voie Verte (Greenway) Cycling</h3>
-    <p class="place-detail">A flat, paved, car-free cycling/walking path runs along the old canal from Beaune toward Santenay and beyond. Perfect for kids &mdash; no hills, no traffic. Rent bikes in Beaune or Santenay. The 5-year-old can ride in a trailer or tag-along.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> Wine Tasting (Adults)</h3>
-    <p class="place-detail">Many domaines offer tastings. Kid-friendly approach: visit a domaine with grounds where kids can play outside while you taste. Options near you:</p>
-    <ul>
-      <li><strong>Chateau de Santenay</strong> &mdash; Has grounds, kids can explore (10 min drive)</li>
-      <li><strong>Chateau de Meursault</strong> &mdash; Beautiful cellars, grounds with space for kids</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag food">Food</span> Dinner Ideas</h3>
-    <ul>
-      <li><strong>Auberge du Vieux Vigneron</strong>, Corpeau &mdash; Classic Burgundian auberge, ~10 min drive. Coq au vin, boeuf bourguignon</li>
-      <li><strong>Le Montrachet</strong>, Puligny-Montrachet &mdash; More upscale but not stuffy. 10 min drive. One of the great wine villages</li>
-      <li><strong>Cook at home</strong> &mdash; The supermarkets and markets will have amazing ingredients. A rotisserie chicken + salad + good wine is a perfect low-key night</li>
-    </ul>
-  </div>
-
-  <!-- Day 4: Sunday -->
-  <div class="day-header burgundy">Sunday, April 5 &mdash; Slower Day</div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Falaise de Cormot Hike</h3>
-    <p class="place-detail">A gentle hike to limestone cliffs with panoramic views of the valley. About 25 min drive south from St Sernin. Trail is manageable for a 5-year-old (bring a carrier just in case). Roughly 1-1.5 hrs round trip.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Nolay</h3>
-    <p class="place-detail">Charming medieval village 15 min west. Has the old wooden market hall (Les Halles, 14th century), a few cafes, and a quiet feel. Good for an ice cream stop and wandering. The 11-year-old might like the old stone architecture.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Parc de l'Auxois</h3>
-    <p class="place-detail">Animal park + amusement rides, about 45 min north toward Dijon. Has animals, small rides, mini-golf. Good if kids need a purely fun day. Best for the 5-year-old; the 11-year-old may find some rides young for her.</p>
-    <p class="place-address">Lieu-dit Les Tilles, 21140 Arnay-sous-Vitteaux</p>
-  </div>
-
-  <div class="card">
-    <h3>Your Burgundy Notes</h3>
-    <textarea class="note-field" id="note-burgundy" placeholder="Accommodation address, restaurant reservations, ideas..."></textarea>
-  </div>
-</div>
-
-<!-- ===================== PARIS ===================== -->
-<div class="section" id="paris">
-
-  <div class="card" style="background:var(--paris-light);border-color:var(--paris)">
-    <h3 style="color:var(--paris)">Paris with Kids</h3>
-    <p>4 days in Paris (arriving Apr 6, departing Apr 10 evening). The key with kids is: one big thing per day, leave room for playgrounds and wandering. Don't over-schedule.</p>
-  </div>
-
-  <div class="card">
-    <h3>Your Hotel: Maison Breguet</h3>
-    <p class="place-name">Maison Breguet (5-star boutique)</p>
-    <p class="place-address">8 Rue Breguet, 75011 Paris</p>
-    <p class="place-detail">Phone: +33 1 58 30 32 31</p>
-    <p class="place-detail" style="margin-top:8px"><strong>Metro</strong>: Breguet-Sabin (Line 5, 1 min walk), Bastille (Lines 1, 5, 8, 2 min walk), Richard Lenoir (Line 5), Voltaire (Line 9)</p>
-    <p class="place-detail" style="margin-top:8px"><strong>On-site restaurant</strong> with glass-roof dining room, terrace, and seasonal menu. Bar on site too.</p>
-    <p class="place-detail" style="margin-top:8px"><strong>Neighborhood</strong>: Right between Bastille and the Marais. Lively, local, full of restaurants and cafes &mdash; very much not touristy. Place des Vosges is a 10-min walk. Marche Richard Lenoir (Bastille Market) is a 1-min walk on Thu &amp; Sun mornings.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag transport">Transport</span> Getting to Major Landmarks</h3>
-    <ul>
-      <li><strong>Louvre</strong> &mdash; Metro Line 1 from Bastille &rarr; Palais Royal-Musee du Louvre (4 stops, ~10 min). Or a lovely 25-min walk via Rue de Rivoli</li>
-      <li><strong>Eiffel Tower</strong> &mdash; Metro Line 8 from Bastille &rarr; Ecole Militaire (7 stops, ~20 min). Or Line 1 to Trocadero via Charles de Gaulle-Etoile transfer (~25 min, but the Trocadero view is iconic)</li>
-      <li><strong>Musee d'Orsay</strong> &mdash; Metro Line 1 from Bastille &rarr; Concorde, then walk across the river (~20 min total). Or bus 69 runs from Bastille directly there</li>
-      <li><strong>Notre-Dame / Ile de la Cite</strong> &mdash; Metro Line 1 from Bastille &rarr; Hotel de Ville, then 10-min walk. Or just walk the whole way (~20 min, beautiful route through the Marais)</li>
-      <li><strong>Sacre-Coeur / Montmartre</strong> &mdash; Metro Line 5 from Breguet-Sabin &rarr; Gare du Nord, then Line 4 &rarr; Anvers (~25 min)</li>
-      <li><strong>Luxembourg Gardens</strong> &mdash; Metro Line 1 from Bastille &rarr; Chatelet, then RER B &rarr; Luxembourg (~20 min). Or Line 5 to Place Monge and walk through the Latin Quarter</li>
-      <li><strong>Cite des Sciences</strong> &mdash; Metro Line 5 from Breguet-Sabin, direct to Porte de Pantin (~20 min)</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag food">Food</span> Near the Hotel</h3>
-    <p class="place-detail" style="margin-bottom:8px">The 11th is one of the best eating neighborhoods in Paris. Walking distance from Maison Breguet:</p>
-    <ul>
-      <li><strong>Marche Richard Lenoir</strong> (Thu &amp; Sun mornings) &mdash; Massive open-air market right outside. Produce, cheese, rotisserie chicken, pastries. Don't miss it</li>
-      <li><strong>Du Pain et des Idees</strong> &mdash; One of Paris's most famous bakeries. Their pain des amis and escargot pastries are legendary. 34 Rue Yves Toudic, 75010 (~15 min walk or quick metro)</li>
-      <li><strong>Cafe des Anges</strong> &mdash; Classic Parisian bistro on Rue de la Roquette. Entrecote, steak tartare, roast duck. Family-friendly terrace</li>
-      <li><strong>Chez HE</strong> &mdash; Chinese restaurant with a 350 sqm basement playground for kids ages 2-12. High chairs, changing tables. This is your secret weapon on a tough day</li>
-      <li><strong>Bistro Paul Bert</strong> &mdash; Famous bistro at 87 Rue de la Roquette. Seasonal French classics. The steak-frites are iconic</li>
-      <li><strong>Septime</strong> &mdash; World's 50 Best restaurant, right on Rue de Charonne. Book way ahead if you want to try it (adults-only dinner maybe?). Its casual sister <strong>Clamato</strong> (seafood, no reservations) is next door</li>
-      <li><strong>Paris Hanoi</strong> &mdash; Great Vietnamese. Pho, noodle salads, grilled lemongrass chicken. Big portions, kid-friendly</li>
-      <li><strong>Brasserie Martin</strong> &mdash; Stylish 11th arr. spot with seasonal French menu</li>
-      <li><strong>For breakfast</strong>: Hotel has its own restaurant, but also check out any nearby boulangerie for croissants and pain au chocolat. Rue de la Roquette and Rue de Charonne are full of them</li>
-    </ul>
-  </div>
-
-  <!-- Day 5: Monday -->
-  <div class="day-header paris-day">Monday, April 6 &mdash; Arrival from Burgundy</div>
-
-  <div class="card">
-    <h3><span class="tag transport">Transport</span> Train to Paris</h3>
-    <ul>
-      <li><strong>Route</strong>: Chalon-sur-Saone &rarr; Paris Gare de Lyon. TGV/TER options, ~2.5-3.5 hrs depending on service</li>
-      <li><strong>Book on</strong>: <strong>SNCF Connect</strong> (sncf-connect.com) or <strong>Trainline</strong> (thetrainline.com). Tickets from ~48 EUR/person one-way. Book early for best prices</li>
-      <li><strong>Kids</strong>: Under 4 free. Ages 4-11 typically half-price or discounted on TGV. Check "Carte Enfant+" family discount</li>
-      <li><strong>At Gare de Lyon</strong>: Metro Line 1 or Line 14 to Bastille (1-2 stops). Then 2-min walk to Maison Breguet. Or just grab a taxi outside the station (~10-12 EUR, worth it with luggage + kids)</li>
-      <li><strong>Tip</strong>: Chalon-sur-Saone station is ~20 min drive from St Sernin du Plain. Ask your brother for a lift to the station</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Settle In + Neighborhood Walk</h3>
-    <p class="place-detail">After checking in at Maison Breguet, explore the neighborhood on foot. Walk up to <strong>Place des Vosges</strong> (10 min) &mdash; Paris's oldest planned square, stunning arcades, and a great playground. Then wander through the Marais. Rue de la Roquette and Rue de Charonne are full of boulangeries, cafes, and shops.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag food">Food</span> Dinner &mdash; Night 1 (Mon Apr 6)</h3>
-    <p class="place-detail">You'll be arriving from the train &mdash; keep it easy and close to the hotel:</p>
-    <ul>
-      <li><strong>Cafe des Anges</strong> &mdash; Classic Parisian bistro, 5-min walk on Rue de la Roquette. Entrecote, steak tartare, roast duck. Family-friendly terrace. No reservations needed</li>
-      <li><strong>Paris Hanoi</strong> &mdash; Great Vietnamese near the hotel. Pho, noodle salads, grilled lemongrass chicken. Lighter option if you're tired from travel. Big portions, kids love noodles</li>
-      <li><strong>Maison Breguet restaurant</strong> &mdash; Your own hotel's glass-roof dining room. Seasonal menu, zero commute. Best option if kids are crashing</li>
-    </ul>
-  </div>
-
-  <!-- Day 6: Tuesday -->
-  <div class="day-header paris-day">Tuesday, April 7 &mdash; Classic Paris</div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Musee d'Orsay</h3>
-    <p class="place-detail">Better than the Louvre with kids: smaller, more manageable, and the Impressionist galleries are colorful and engaging. The building itself (old train station) is impressive. The big clock windows are a hit. Plan ~2 hours.</p>
-    <p class="place-address">1 Rue de la Legion d'Honneur, 75007</p>
-    <ul>
-      <li><strong>Tip</strong>: Book timed tickets online in advance. Kids under 18 are free</li>
-      <li><strong>Strategy</strong>: Go in the morning when it opens. Hit the Impressionists (level 5) first</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Jardin du Luxembourg</h3>
-    <p class="place-detail">The quintessential Paris park for families. After the museum, head here (15 min walk). Has:</p>
-    <ul>
-      <li><strong>Toy sailboats</strong> on the pond (rent for a few euros &mdash; delights all ages)</li>
-      <li><strong>Playground</strong> (small fee, ~3-4 EUR, but it's excellent &mdash; swings, zip line, etc.)</li>
-      <li><strong>Puppet theater</strong> (Theatre du Luxembourg) &mdash; check schedule, shows are in French but very physical/visual</li>
-      <li><strong>Pony rides</strong> and a carousel nearby</li>
-    </ul>
-    <p class="place-address">75006 Paris (RER Luxembourg or Metro Odeon)</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag food">Food</span> Lunch Near Luxembourg</h3>
-    <ul>
-      <li><strong>Rue de Seine / Rue de Buci</strong> &mdash; Lots of cafes, bakeries, and market stalls. 5 min from the garden</li>
-      <li><strong>Boulangerie Poilane</strong> (8 Rue du Cherche-Midi) &mdash; Famous bread, great cookies</li>
-      <li><strong>Amorino</strong> &mdash; Flower-shaped gelato. Multiple locations. Kids will be ecstatic</li>
-    </ul>
-  </div>
-
-  <div class="card" style="border-left:4px solid #16a34a">
-    <h3><span class="tag food">Food</span> Dinner &mdash; Night 2 (Tue Apr 7) &mdash; RESERVED</h3>
-    <p class="place-name">Brasserie Rosie-Lou (Bonne Nouvelle)</p>
-    <p class="place-detail" style="color:var(--text);font-weight:600">Tuesday April 7 at 6:45 PM &middot; Party of 8</p>
-    <p class="place-detail">Phone: +33 1 42 36 00 20</p>
-    <p class="place-detail" style="margin-top:8px;color:#991b1b">Free cancellation until April 7 at 6:45 AM. After that, credit card will be charged.</p>
-    <p class="place-detail" style="margin-top:8px">Backup options if plans change:</p>
-    <ul>
-      <li><strong>Bistro Paul Bert</strong> &mdash; 87 Rue de la Roquette. One of Paris's most beloved bistros. Legendary steak-frites, seasonal specials, classic desserts. The 11-year-old will feel very grown-up here. Reserve ahead</li>
-      <li><strong>Chez HE (何处思蜀)</strong> &mdash; Chinese restaurant with a 350 sqm basement playground for kids ages 2-12. Excellent food AND the kids can play. High chairs, changing tables. Secret weapon for a night when everyone needs to decompress</li>
-      <li><strong>Le Servan</strong> &mdash; 32 Rue Saint-Maur (10-min walk). Franco-Asian fusion, relaxed vibe. Great for adventurous eaters. Smaller portions work well for sharing with kids</li>
-    </ul>
-  </div>
-
-  <!-- Day 7: Wednesday -->
-  <div class="day-header paris-day">Wednesday, April 8 &mdash; Louvre + Seine Cruise</div>
-
-  <div class="card" style="border-left:4px solid #16a34a">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Louvre &mdash; BOOKED</h3>
-    <p class="place-name">Early Access Louvre Museum Ticket + Seine River Cruise</p>
-    <p class="place-detail" style="color:var(--text);font-weight:600">Wednesday April 8 at 9:30 AM</p>
-    <ul>
-      <li><strong>Adults</strong>: 2 &times; &euro;93.00 = &euro;186.00</li>
-      <li><strong>Children (3-17)</strong>: 2 &times; &euro;65.00 = &euro;130.00</li>
-      <li><strong>Total</strong>: &euro;316.00 (paid)</li>
-    </ul>
-    <p class="place-detail" style="margin-top:8px"><strong>Includes</strong>: Early access to the Louvre with direct access to the Mona Lisa + Seine River Cruise</p>
-    <p class="place-detail" style="margin-top:8px"><strong>Getting there</strong>: Metro Line 1 from Bastille &rarr; Palais Royal-Musee du Louvre (4 stops, ~10 min). Arrive by 9:15 AM</p>
-    <p class="place-detail" style="margin-top:8px"><strong>Tips with kids</strong>: Don't try to see everything. Pick 2-3 highlights beyond the Mona Lisa: Winged Victory of Samothrace (dramatic staircase), Egyptian antiquities (mummies!), and the Napoleon III apartments (over-the-top gilded rooms). Plan ~2-3 hours max before the kids fade</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Seine River Cruise (included with tickets)</h3>
-    <p class="place-detail">Your Louvre tickets include a Seine cruise. After the museum, take a break and hop on the boat (~1 hr). Great way to see Notre-Dame, the Eiffel Tower, and the bridges without walking. The 5-year-old will love being on a boat.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Eiffel Tower (Afternoon)</h3>
-    <p class="place-detail">If you still have energy after the Louvre and cruise, the Eiffel Tower is a natural add-on since you'll see it from the boat. Tips:</p>
-    <ul>
-      <li><strong>Book summit tickets</strong> well in advance (tickets open ~60 days before). If sold out, 2nd floor is still great</li>
-      <li><strong>Alternative</strong>: Walk up the stairs to the 2nd floor (674 steps). The 11-year-old will enjoy the challenge. The 5-year-old... maybe not</li>
-      <li><strong>Champ de Mars</strong> below is a great picnic spot</li>
-      <li><strong>Or just admire from Trocadero</strong> &mdash; the view from across the river is arguably better than going up, and it's free. Good option if kids are tired</li>
-    </ul>
-    <p class="place-address">Champ de Mars, 75007</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Cite des Sciences (Alternative/Rainy Day)</h3>
-    <p class="place-detail">Paris's enormous science museum in Parc de la Villette. Has a dedicated Cite des Enfants section with two age ranges (2-7 and 5-12). Hands-on, interactive, and genuinely fun. Book timed slots for Cite des Enfants.</p>
-    <p class="place-address">30 Avenue Corentin Cariou, 75019</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag food">Food</span> Dinner &mdash; Night 3 (Wed Apr 8)</h3>
-    <p class="place-detail">After the Eiffel Tower / river day:</p>
-    <ul>
-      <li><strong>Brasserie Martin</strong> &mdash; Stylish 11th arr. spot. Seasonal French menu with traditional homemade dishes. Nice atmosphere, not too formal for kids</li>
-      <li><strong>Clamato</strong> &mdash; Septime's casual sister restaurant on Rue de Charonne. Seafood small plates, no reservations, walk-in only. Best for an early dinner (arrive by 7 PM). Share lots of dishes</li>
-      <li><strong>Le Bouillon Chartier</strong> &mdash; 7 Rue du Faubourg Montmartre, 75009 (if you're already near Eiffel Tower/center). A Paris institution since 1896. Gorgeous belle epoque dining hall. Classic French food at incredibly low prices (~15 EUR/person). Kids love the grand room. No reservations, expect a short line</li>
-    </ul>
-  </div>
-
-  <!-- Day 8: Thursday -->
-  <div class="day-header paris-day">Thursday, April 9 &mdash; Montmartre + Free Time</div>
-
-  <div class="card">
-    <h3><span class="tag culture">Culture</span> <span class="tag kids">Kids</span> Montmartre</h3>
-    <p class="place-detail">Hilly, charming, village-feel neighborhood. Start at the bottom and work up to Sacre-Coeur.</p>
-    <ul>
-      <li><strong>Sacre-Coeur</strong>: Free to enter. Amazing views from the steps. Inside is impressive too</li>
-      <li><strong>Place du Tertre</strong>: Artists' square. Get a caricature drawn of the kids (negotiate price first, ~20-30 EUR)</li>
-      <li><strong>Funicular</strong>: Little cable car up the hill (uses a metro ticket). Kids love it</li>
-      <li><strong>Le Mur des Je t'aime</strong> (Wall of Love): "I love you" in 250+ languages. Quick stop in Square Jehan Rictus</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> <span class="tag kids">Kids</span> Afternoon Ideas</h3>
-    <ul>
-      <li><strong>Parc des Buttes-Chaumont</strong> &mdash; Wild, hilly park with a temple on a rocky island. Great for running around. Less touristy</li>
-      <li><strong>Canal Saint-Martin</strong> &mdash; Walk along the locks, watch boats pass through. Trendy neighborhood with good cafes</li>
-      <li><strong>Shopping</strong> &mdash; Le Marais district for browsing. Kid-friendly: Merci concept store, BHV department store</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag food">Food</span> Dinner &mdash; Night 4 / Last Night (Thu Apr 9)</h3>
-    <p class="place-detail">Make it special &mdash; last dinner in Paris:</p>
-    <ul>
-      <li><strong>Chez Janou</strong> &mdash; Famous for the giant chocolate mousse bowl served family-style (they bring the whole pot to the table &mdash; kids go wild). Provencal menu. Book ahead. 2 Rue Roger Verlomme, 75003 (10-min walk through the Marais)</li>
-      <li><strong>Le Relais de l'Entrecote</strong> &mdash; No menu, no choices &mdash; just steak-frites with their legendary secret sauce. Walnut salad to start, then steak served in two rounds. Kids love the simplicity. Expect a line but it moves fast. Multiple locations (nearest: 20 Rue Marbeuf, 75008)</li>
-      <li><strong>Septime</strong> &mdash; If you can get a reservation (book well in advance), this is a special-occasion meal. Creative tasting menu, relaxed atmosphere despite being world-famous. 80 Rue de Charonne (5-min walk). Best as a date night if you can arrange a sitter through the hotel</li>
-    </ul>
-  </div>
-
-  <!-- Day 9: Departure -->
-  <div class="day-header paris-day">Friday, April 10 &mdash; Departure Day</div>
-
-  <div class="card">
-    <h3><span class="tag transport">Transport</span> Getting to Orly</h3>
-    <ul>
-      <li><strong>Flight</strong>: BF720 departs 6:50 PM. Be at Orly by ~4:00 PM</li>
-      <li><strong>Orlyval</strong>: Automated train from Antony (RER B). ~35 min from central Paris. ~12 EUR/adult</li>
-      <li><strong>Taxi/Uber</strong>: Fixed rate from Paris to Orly is ~35 EUR. Easier with kids and luggage</li>
-      <li><strong>From Maison Breguet</strong>: Metro Line 8 from Bastille &rarr; Concorde, then RER C &rarr; Pont de Rungis, then Orlyval. Or just grab a taxi/Uber (~35 EUR flat rate, much easier with luggage + kids)</li>
-      <li><strong>Tip</strong>: Leave hotel by 3 PM at latest to be safe</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag outdoor">Outdoor</span> Last Morning in Paris</h3>
-    <ul>
-      <li><strong>Notre-Dame area</strong> &mdash; Walk around the exterior (reconstruction ongoing but the area is beautiful). Ile de la Cite and Ile Saint-Louis have great ice cream (Berthillon)</li>
-      <li><strong>Shakespeare & Company</strong> bookshop &mdash; right across from Notre-Dame. The 11-year-old might love browsing</li>
-      <li><strong>Just wander</strong> &mdash; Get croissants, sit in a park, soak it in</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Your Paris Notes</h3>
-    <textarea class="note-field" id="note-paris" placeholder="Hotel address, metro tips, restaurant reservations..."></textarea>
-  </div>
-</div>
-
-<!-- ===================== KIDS ===================== -->
-<div class="section" id="kids">
-
-  <div class="card" style="background:#fef3c7;border-color:#f59e0b">
-    <h3 style="color:#92400e">Shops &amp; Fun for the Kids</h3>
-    <p style="color:#92400e">Toy stores, bookshops, and the Paris Zoo &mdash; things to scatter across your days or save for when you need a win.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> <span class="tag outdoor">Outdoor</span> Paris Zoo (Parc Zoologique de Paris)</h3>
-    <p class="place-detail">A modern zoo in the Bois de Vincennes with 5 biozones (Sahel-Sudan, Patagonia, Europe, Guyana, Madagascar). The big rock formation in the center is the landmark. Plan at least 2 hours &mdash; it's spacious and well-designed. Both kids will love it.</p>
-    <p class="place-address">Avenue Daumesnil, 75012 Paris</p>
-    <ul>
-      <li><strong>Hours</strong>: Open daily. 10:00 AM - 5:00 PM (spring hours may extend &mdash; check parczoologiquedeparis.fr)</li>
-      <li><strong>Price</strong>: Family pass (2 adults + 2 kids) = <strong>68 EUR</strong>. Adults 22 EUR, kids 3-12 = 17 EUR. Under 3 free</li>
-      <li><strong>Getting there from hotel</strong>: Metro Line 8 from Bastille &rarr; Porte Doree (6 stops, ~15 min). Then 10-min walk to entrance</li>
-      <li><strong>Tip</strong>: Book tickets online to skip the line. There's a cafe inside but bring snacks too</li>
-      <li><strong>Combine with</strong>: The Bois de Vincennes park itself is enormous &mdash; playgrounds, a lake with rowboats, and the Parc Floral (botanical garden with free playground)</li>
-    </ul>
-  </div>
-
-  <div class="day-header" style="color:#92400e;border-bottom-color:#fef3c7">Toy Stores</div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Le Petit Souk</h3>
-    <p class="place-detail">Funky, curated toy shop in the Marais. Quirky games, smart toys, French brands, limited-edition collectibles. Not mass-market stuff &mdash; the kind of toys you can only find in Paris. Good for both ages.</p>
-    <p class="place-address">Le Marais (10-min walk from hotel)</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Mandorla Palace</h3>
-    <p class="place-detail">A treasure trove of toys in the Marais: games, puzzles, stuffed animals, dolls, miniatures, illustrated books, old-fashioned spinning tops. Feels like a magical attic. The 5-year-old will go wide-eyed.</p>
-    <p class="place-address">34 Rue Francois Miron, 75004 (Marais, ~15 min walk from hotel)</p>
-    <p class="place-detail">Open Tue-Sat 11 AM - 7 PM</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Le FanFans</h3>
-    <p class="place-detail">Whimsical toy shop behind Rue de Rivoli in the Marais. Specializes in magic tricks, metal carousels, and classic games. The 11-year-old will love the magic trick section.</p>
-    <p class="place-address">Le Marais, near Rue de Rivoli</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Si Tu Veux (Jouer)</h3>
-    <p class="place-detail">Historic toy store tucked inside a Parisian covered passage (Passage du Grand-Cerf or similar). Beautiful setting, traditional European toys, wooden toys, dress-up costumes. A Paris classic.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Otipi (Saint-Placide)</h3>
-    <p class="place-detail">Family-friendly toy store in the 6th arrondissement near Luxembourg Gardens. Good to combine with a Luxembourg Gardens visit. Eco-friendly and educational toys.</p>
-    <p class="place-address">Near Metro Saint-Placide, 75006</p>
-  </div>
-
-  <div class="day-header" style="color:#92400e;border-bottom-color:#fef3c7">Bookstores</div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> <span class="tag culture">Culture</span> Shakespeare &amp; Company</h3>
-    <p class="place-detail">The most famous English-language bookshop in the world. Right across from Notre-Dame. Beautiful, rambling, stacked floor-to-ceiling. The 11-year-old will love browsing. Has a small kids section and the upstairs reading nook is magical. The attached cafe is good for a break.</p>
-    <p class="place-address">37 Rue de la Bucherie, 75005 (Metro: Saint-Michel or Cluny-La Sorbonne)</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Chantelivre</h3>
-    <p class="place-detail">Paris's largest independent children's bookshop. Over 50,000 titles, from baby board books to teen novels. Mostly French but a wonderful browse even if you don't read French &mdash; the illustrated books and Tintin/Asterix selection are great souvenirs. They do readings and events too.</p>
-    <p class="place-address">Saint-Germain-des-Pres, 75006</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> The Red Wheelbarrow / The Red Balloon</h3>
-    <p class="place-detail">The Red Wheelbarrow is a beloved English-language bookshop; The Red Balloon is its dedicated children's offshoot &mdash; Paris's first bilingual English-French kids' bookshop. Great selection of English-language picture books, chapter books, and YA. The 11-year-old can find something to read on the plane home.</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> WH Smith</h3>
-    <p class="place-detail">The largest English-language bookstore in Paris. Big children's section with cozy reading corners. On Rue de Rivoli near the Tuileries, so easy to combine with a Louvre day.</p>
-    <p class="place-address">248 Rue de Rivoli, 75001</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag kids">Kids</span> Galignani</h3>
-    <p class="place-detail">The first English-language bookshop on the European continent (since 1801!). Gorgeous store. Stocks English children's books including picture books and YA. Also on Rue de Rivoli.</p>
-    <p class="place-address">224 Rue de Rivoli, 75001</p>
-  </div>
-
-  <div class="card">
-    <h3>Your Kids Shopping Notes</h3>
-    <textarea class="note-field" id="note-kids" placeholder="Wish lists, sizes, souvenir ideas..."></textarea>
+  <div class="card" style="margin-top:8px">
+    <h3>Hotel Notes</h3>
+    <textarea class="note-field" id="note-hotel" placeholder="Room number, wifi password, concierge tips..."></textarea>
   </div>
 </div>
 
@@ -569,7 +833,7 @@
   </div>
 
   <div class="card">
-    <h3>Shopping & Markets</h3>
+    <h3>Shopping &amp; Markets</h3>
     <div class="phrase-row"><span class="phrase-fr">Combien ca coute?</span><span class="phrase-en">How much does it cost?</span><span class="phrase-pronunciation">kohm-BYAN sah KOOT</span></div>
     <div class="phrase-row"><span class="phrase-fr">Je voudrais...</span><span class="phrase-en">I would like...</span><span class="phrase-pronunciation">zhuh voo-DRAY</span></div>
     <div class="phrase-row"><span class="phrase-fr">C'est tout</span><span class="phrase-en">That's all</span><span class="phrase-pronunciation">say TOO</span></div>
@@ -585,133 +849,164 @@
   </div>
 </div>
 
-<!-- ===================== PRACTICAL ===================== -->
-<div class="section" id="practical">
+<!-- ===================== ESSENTIALS ===================== -->
+<div class="section" id="essentials">
 
   <div class="emergency-banner">
     <h3>Emergency Numbers</h3>
-    <p style="margin-top:8px">112</p>
-    <p style="font-size:13px;font-weight:400;margin-top:4px">European emergency (works everywhere)</p>
-    <p style="margin-top:8px">15</p>
-    <p style="font-size:13px;font-weight:400;margin-top:4px">SAMU (medical emergency)</p>
-    <p style="margin-top:8px">17</p>
-    <p style="font-size:13px;font-weight:400;margin-top:4px">Police</p>
-    <p style="margin-top:8px">18</p>
-    <p style="font-size:13px;font-weight:400;margin-top:4px">Fire / Pompiers (they also handle medical)</p>
-  </div>
-
-  <div class="card">
-    <h3><span class="tag essential">Essential</span> US Embassy</h3>
-    <p class="place-detail">2 Avenue Gabriel, 75008 Paris</p>
-    <p class="place-detail">Emergency: +33 1 43 12 22 22</p>
-    <p class="place-detail">After hours: +33 1 43 12 22 22 (same number, connects to duty officer)</p>
-  </div>
-
-  <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3><span class="tag essential">Essential</span> Money & Tipping</h3>
-    </div>
-    <div class="collapsible-body">
-      <ul>
-        <li><strong>Currency</strong>: Euro (EUR). As of early 2026, roughly 1 USD = 0.90-0.95 EUR</li>
-        <li><strong>Cards</strong>: Visa/Mastercard widely accepted. Amex less so. Always have some cash for markets and small cafes</li>
-        <li><strong>ATMs</strong>: Use bank ATMs (not Euronet or tourist ATMs which charge high fees). Withdraw at BNP, Credit Agricole, Societe Generale</li>
-        <li><strong>Tipping</strong>: Service is included in France (service compris). Rounding up or leaving 1-2 EUR for good service is appreciated but not expected</li>
-        <li><strong>Tax-free shopping</strong>: Available on purchases over 100 EUR at participating stores. Ask for a detaxe form</li>
-      </ul>
+    <div class="emergency-grid">
+      <div class="emergency-item">
+        <a href="tel:112" class="emergency-number">112</a>
+        <span class="emergency-label">European Emergency (works everywhere)</span>
+      </div>
+      <div class="emergency-item">
+        <a href="tel:15" class="emergency-number">15</a>
+        <span class="emergency-label">SAMU (medical emergency)</span>
+      </div>
+      <div class="emergency-item">
+        <a href="tel:17" class="emergency-number">17</a>
+        <span class="emergency-label">Police</span>
+      </div>
+      <div class="emergency-item">
+        <a href="tel:18" class="emergency-number">18</a>
+        <span class="emergency-label">Fire / Pompiers</span>
+      </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3><span class="tag essential">Essential</span> Phone & Internet</h3>
-    </div>
-    <div class="collapsible-body">
-      <ul>
-        <li><strong>eSIM</strong>: Cheapest option. Get an Orange, Free, or Airalo eSIM before departure. ~10-20 EUR for 10 days of data</li>
-        <li><strong>T-Mobile</strong>: If you have T-Mobile, international roaming is included (slower speeds but functional)</li>
-        <li><strong>WiFi</strong>: Hotels and most cafes have WiFi. Rural Burgundy may have spottier coverage</li>
-        <li><strong>Offline maps</strong>: Download Google Maps for Burgundy and Paris before leaving</li>
-      </ul>
+    <h3>US Embassy</h3>
+    <p class="card-address">2 Avenue Gabriel, 75008 Paris</p>
+    <p class="card-detail">Emergency: <a href="tel:+33143122222">+33 1 43 12 22 22</a></p>
+    <p class="card-detail">After hours: same number (connects to duty officer)</p>
+  </div>
+
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Money &amp; Tipping</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <ul class="card-list">
+          <li><strong>Currency</strong>: Euro (EUR). ~1 USD = 0.90-0.95 EUR</li>
+          <li><strong>Cards</strong>: Visa/Mastercard widely accepted. Amex less so. Have some cash for markets and small cafes</li>
+          <li><strong>ATMs</strong>: Use bank ATMs (BNP, Credit Agricole, Societe Generale). Avoid Euronet or tourist ATMs</li>
+          <li><strong>Tipping</strong>: Service is included (service compris). Rounding up or leaving 1-2 EUR is appreciated but not expected</li>
+          <li><strong>Tax-free shopping</strong>: Available on purchases over 100 EUR. Ask for a detaxe form</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3><span class="tag transport">Transport</span> Car Services with Car Seats</h3>
-    </div>
-    <div class="collapsible-body">
-      <p class="place-detail" style="margin-bottom:8px">Regular Paris taxis do NOT carry car seats. You must book a family car service in advance. Your 5-year-old needs a booster seat by French law.</p>
-      <ul>
-        <li><strong>Lajoieway</strong> &mdash; From ~50 EUR (Orly), ~65 EUR (CDG). Free car seat included (infant, toddler, or booster). Mercedes vehicles. Book at lajoieway.com</li>
-        <li><strong>Family Transport Paris</strong> &mdash; Mercedes Classe V, fits up to 3 car seats at once. Airport transfers + city trips. Book at familytransportparis.com</li>
-        <li><strong>Taxi Bambino</strong> &mdash; Airport transfers and city rides with car seats. Specializes in families. Book at taxibambino.com</li>
-        <li><strong>G7 Famille</strong> &mdash; Paris's biggest taxi company offers "G7 Family" with baby seats + boosters. Small fleet though &mdash; book early. g7.fr</li>
-        <li><strong>Taxi Baby Seat</strong> &mdash; Minivans + estate cars for 1-8 passengers, all with child seats. taxibabyseat.com</li>
-      </ul>
-      <p class="place-detail" style="margin-top:8px"><strong>Tip</strong>: Book your Orly departure transfer (Apr 10) now &mdash; these services fill up. You'll need a booster for the 5-year-old at minimum.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3><span class="tag transport">Transport</span> Paris Metro Tips</h3>
-    </div>
-    <div class="collapsible-body">
-      <ul>
-        <li><strong>Navigo Easy card</strong>: Reloadable transit card, buy at any metro station. Load t+ tickets (single rides, ~2.15 EUR each)</li>
-        <li><strong>Kids under 4</strong>: Free on all transit</li>
-        <li><strong>Kids 4-9</strong>: Half-price tickets (your 5-year-old qualifies)</li>
-        <li><strong>Kids 10+</strong>: Full price (your 11-year-old needs a regular ticket)</li>
-        <li><strong>Carnet of 10</strong>: Buy 10 tickets at once for a discount</li>
-        <li><strong>Strollers/buggies</strong>: Many metro stations lack elevators. RER and bus are more accessible</li>
-        <li><strong>Safety</strong>: Watch for pickpockets, especially on Line 1, at Chatelet, and on the RER B to/from airports</li>
-      </ul>
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Phone &amp; Internet</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <ul class="card-list">
+          <li><strong>eSIM</strong>: Cheapest option. Orange, Free, or Airalo. ~10-20 EUR for 10 days of data</li>
+          <li><strong>T-Mobile</strong>: International roaming included (slower speeds but functional)</li>
+          <li><strong>WiFi</strong>: Hotels and most cafes. Rural Burgundy may be spottier</li>
+          <li><strong>Offline maps</strong>: Download Google Maps for Burgundy and Paris before leaving</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3><span class="tag food">Food</span> Eating with Kids in France</h3>
-    </div>
-    <div class="collapsible-body">
-      <ul>
-        <li><strong>Meal times</strong>: Lunch 12-2 PM, dinner 7:30-9 PM. Restaurants close between meals. Eat when the French eat or you'll find kitchens closed</li>
-        <li><strong>Menus enfants</strong>: Most restaurants have kids menus (usually steak hache/hamburger, chicken, or pasta + dessert, ~8-12 EUR)</li>
-        <li><strong>Boulangeries</strong>: Your best friend. Open early, have pastries, sandwiches, quiche. Pain au chocolat is a 5-year-old's dream breakfast</li>
-        <li><strong>Supermarkets</strong>: Monoprix (city), Carrefour, Leclerc. Good for snacks, yogurt, fruit</li>
-        <li><strong>Water</strong>: Tap water is safe everywhere. Ask for "une carafe d'eau" (free) instead of buying bottled</li>
-        <li><strong>Bread</strong>: Comes with every meal, free. Don't fill up on it before the food arrives (easier said than done)</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3>Packing Checklist</h3>
-    </div>
-    <div class="collapsible-body" id="checklist-container">
-      <!-- populated by JS -->
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Car Services with Car Seats</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <p class="card-desc" style="margin-bottom:8px">Regular Paris taxis do NOT carry car seats. Book a family car service in advance. Your 5-year-old needs a booster seat by French law.</p>
+        <ul class="card-list">
+          <li><strong>Lajoieway</strong> &mdash; From ~50 EUR (Orly), ~65 EUR (CDG). Free car seat included. lajoieway.com</li>
+          <li><strong>Family Transport Paris</strong> &mdash; Mercedes Classe V, fits up to 3 car seats. familytransportparis.com</li>
+          <li><strong>Taxi Bambino</strong> &mdash; Specializes in families. taxibambino.com</li>
+          <li><strong>G7 Famille</strong> &mdash; Paris's biggest taxi company. "G7 Family" with baby seats + boosters. Small fleet, book early. g7.fr</li>
+          <li><strong>Taxi Baby Seat</strong> &mdash; Minivans + estate cars, 1-8 passengers. taxibabyseat.com</li>
+        </ul>
+        <p class="card-detail" style="margin-top:8px"><strong>Tip</strong>: Book your Orly departure transfer (Apr 10) now &mdash; these fill up.</p>
+      </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3>Weather in Early April</h3>
-    </div>
-    <div class="collapsible-body">
-      <ul>
-        <li><strong>Temperature</strong>: Highs around 12-16C (54-61F), lows 5-8C (41-46F)</li>
-        <li><strong>Rain</strong>: April is moderately rainy. Expect a few wet days. Bring layers and a light rain jacket</li>
-        <li><strong>Sun</strong>: Sunset ~8:30 PM. Long evenings!</li>
-        <li><strong>Dress</strong>: Layers. T-shirt + sweater + jacket. Comfortable walking shoes are essential</li>
-      </ul>
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Metro Tips</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <ul class="card-list">
+          <li><strong>Navigo Easy card</strong>: Reloadable transit card. Load t+ tickets (~2.15 EUR each)</li>
+          <li><strong>Kids under 4</strong>: Free on all transit</li>
+          <li><strong>Kids 4-9</strong>: Half-price (your 5-year-old qualifies)</li>
+          <li><strong>Kids 10+</strong>: Full price (your 11-year-old needs a regular ticket)</li>
+          <li><strong>Carnet of 10</strong>: Buy 10 tickets at once for a discount</li>
+          <li><strong>Strollers</strong>: Many stations lack elevators. RER and bus are more accessible</li>
+          <li><strong>Safety</strong>: Watch for pickpockets on Line 1, at Chatelet, and on RER B</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="card">
-    <h3>Your Practical Notes</h3>
-    <textarea class="note-field" id="note-practical" placeholder="Insurance details, doctor info, important numbers..."></textarea>
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Eating with Kids in France</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <ul class="card-list">
+          <li><strong>Meal times</strong>: Lunch 12-2 PM, dinner 7:30-9 PM. Kitchens close between meals</li>
+          <li><strong>Menus enfants</strong>: Most restaurants have kids menus (~8-12 EUR)</li>
+          <li><strong>Boulangeries</strong>: Your best friend. Open early, pastries, sandwiches, quiche. Pain au chocolat = dream breakfast</li>
+          <li><strong>Supermarkets</strong>: Monoprix, Carrefour, Leclerc. Good for snacks, yogurt, fruit</li>
+          <li><strong>Water</strong>: Tap water is safe. Ask for "une carafe d'eau" (free)</li>
+          <li><strong>Bread</strong>: Comes with every meal, free. Don't fill up before the food arrives</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Weather (Early April)</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card suggestion-card">
+        <ul class="card-list">
+          <li><strong>Temperature</strong>: Highs 12-16C (54-61F), lows 5-8C (41-46F)</li>
+          <li><strong>Rain</strong>: Moderately rainy. Expect a few wet days. Bring layers and rain jacket</li>
+          <li><strong>Sun</strong>: Sunset ~8:30 PM. Long evenings!</li>
+          <li><strong>Dress</strong>: Layers. T-shirt + sweater + jacket. Comfortable walking shoes essential</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible-section">
+    <button class="section-toggle" onclick="toggleSection(this)">
+      <span>Packing Checklist</span>
+      <span class="toggle-icon">+</span>
+    </button>
+    <div class="section-body">
+      <div class="card" id="checklist-container">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:8px">
+    <h3>Notes</h3>
+    <textarea class="note-field" id="note-essentials" placeholder="Insurance details, doctor info, important numbers..."></textarea>
   </div>
 </div>
 

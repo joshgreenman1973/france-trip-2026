@@ -1,7 +1,8 @@
 // === Service Worker Registration ===
 if ('serviceWorker' in navigator) {
   const swPath = location.pathname.includes('france-trip-2026') ? '/france-trip-2026/sw.js' : '/sw.js';
-  navigator.serviceWorker.register(swPath, { scope: location.pathname.includes('france-trip-2026') ? '/france-trip-2026/' : '/' }).catch(() => {});
+  const scope = location.pathname.includes('france-trip-2026') ? '/france-trip-2026/' : '/';
+  navigator.serviceWorker.register(swPath, { scope }).catch(() => {});
 }
 
 // === Tab Navigation ===
@@ -15,9 +16,50 @@ tabs.forEach(tab => {
     sections.forEach(s => s.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById(target).classList.add('active');
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   });
 });
+
+// === Day Picker ===
+const dayBtns = document.querySelectorAll('.day-btn');
+const dayContents = document.querySelectorAll('.day-content');
+
+dayBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const day = btn.dataset.day;
+    dayBtns.forEach(b => b.classList.remove('active'));
+    dayContents.forEach(d => d.classList.remove('active'));
+    btn.classList.add('active');
+    const target = document.getElementById('day-' + day);
+    if (target) target.classList.add('active');
+
+    // Scroll the picker to keep the active button centered
+    const picker = document.getElementById('day-picker');
+    if (picker) {
+      const btnLeft = btn.offsetLeft;
+      const btnWidth = btn.offsetWidth;
+      const pickerWidth = picker.offsetWidth;
+      const scrollTo = btnLeft - (pickerWidth / 2) + (btnWidth / 2);
+      picker.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  });
+});
+
+// Auto-select today's day if we're on the trip
+function autoSelectDay() {
+  const now = new Date();
+  const dayMap = {
+    '2026-04-02': 'apr2', '2026-04-03': 'apr3', '2026-04-04': 'apr4',
+    '2026-04-05': 'apr5', '2026-04-06': 'apr6', '2026-04-07': 'apr7',
+    '2026-04-08': 'apr8', '2026-04-09': 'apr9', '2026-04-10': 'apr10'
+  };
+  const dateStr = now.toISOString().split('T')[0];
+  if (dayMap[dateStr]) {
+    const btn = document.querySelector(`.day-btn[data-day="${dayMap[dateStr]}"]`);
+    if (btn) btn.click();
+  }
+}
+autoSelectDay();
 
 // === Countdown ===
 function updateCountdown() {
@@ -25,25 +67,26 @@ function updateCountdown() {
   const now = new Date();
   const diff = departure - now;
   const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
-  const el = document.getElementById('countdown-days');
-  if (el) {
-    if (days > 0) {
-      el.textContent = days;
-    } else if (days === 0) {
-      el.textContent = 'Today!';
-    } else {
-      el.textContent = 'Bon voyage!';
-      el.style.fontSize = '32px';
-    }
+  const el = document.getElementById('countdown');
+  if (!el) return;
+
+  if (days > 1) {
+    el.textContent = days + ' days to go';
+  } else if (days === 1) {
+    el.textContent = 'Tomorrow!';
+  } else if (days === 0) {
+    el.textContent = 'Today!';
+  } else {
+    el.textContent = 'Bon voyage!';
   }
 }
 updateCountdown();
 
 // === Collapsible Sections ===
-window.toggleCollapsible = function(header) {
-  header.classList.toggle('open');
-  const body = header.nextElementSibling;
-  body.classList.toggle('open');
+window.toggleSection = function(btn) {
+  btn.classList.toggle('open');
+  const body = btn.nextElementSibling;
+  if (body) body.classList.toggle('open');
 };
 
 // === Notes Persistence (localStorage) ===
