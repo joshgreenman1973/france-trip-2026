@@ -1,4 +1,4 @@
-const CACHE_NAME = 'france-trip-v6';
+const CACHE_NAME = 'france-trip-v7';
 const BASE = '/france-trip-2026/';
 const ASSETS = [
   BASE,
@@ -23,8 +23,15 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
+// Network-first: try fetching fresh content, fall back to cache when offline
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request))
+    fetch(event.request)
+      .then(response => {
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        return response;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
