@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paris Itinerary — April 6–10, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: letter;
+      margin: 0.65in 0.7in;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      color: #1a1a1e;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* === COVER HEADER === */
+    .cover {
+      text-align: center;
+      padding: 28pt 0 22pt;
+      border-bottom: 2.5pt solid #1a1a1e;
+      margin-bottom: 20pt;
+      page-break-after: avoid;
+    }
+
+    .cover-eyebrow {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4pt;
+      color: #888;
+      margin-bottom: 6pt;
+    }
+
+    .cover h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 36pt;
+      font-weight: 700;
+      letter-spacing: -0.5pt;
+      line-height: 1.1;
+      margin-bottom: 6pt;
+    }
+
+    .cover-sub {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 14pt;
+      font-weight: 400;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* === HOTEL REFERENCE STRIP === */
+    .hotel-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 1.5pt solid #1a1a1e;
+      padding: 12pt 16pt;
+      margin-bottom: 22pt;
+      page-break-inside: avoid;
+    }
+
+    .hotel-strip-main h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 16pt;
+      font-weight: 700;
+      margin-bottom: 2pt;
+    }
+
+    .hotel-strip-main p {
+      font-size: 9.5pt;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .hotel-strip-contact {
+      text-align: right;
+      font-size: 9.5pt;
+      color: #444;
+      flex-shrink: 0;
+      padding-left: 20pt;
+    }
+
+    .hotel-strip-contact strong {
+      font-size: 11pt;
+      color: #1a1a1e;
+      display: block;
+      margin-bottom: 1pt;
+    }
+
+    /* === DAY SECTIONS === */
+    .day {
+      page-break-inside: avoid;
+      margin-bottom: 20pt;
+    }
+
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10pt;
+      border-bottom: 1.5pt solid #1a1a1e;
+      padding-bottom: 5pt;
+      margin-bottom: 12pt;
+    }
+
+    .day-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 42pt;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -1pt;
+    }
+
+    .day-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .day-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18pt;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+
+    .day-date {
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 1.5pt;
+      color: #888;
+      font-weight: 600;
+    }
+
+    /* === ITEMS === */
+    .item {
+      margin-bottom: 10pt;
+      padding-left: 14pt;
+      border-left: 2pt solid #ddd;
+      page-break-inside: avoid;
+    }
+
+    .item-confirmed {
+      border-left: 3pt solid #1a1a1e;
+      background: #f8f8f6;
+      margin-left: -6pt;
+      padding: 10pt 14pt 10pt 17pt;
+      border-radius: 0;
+    }
+
+    .item-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.8pt;
+      color: #1a1a1e;
+      margin-bottom: 3pt;
+    }
+
+    .item-label-suggestion {
+      font-size: 7.5pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5pt;
+      color: #999;
+      margin-bottom: 3pt;
+    }
+
+    .item h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 14pt;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2pt;
+    }
+
+    .item p {
+      font-size: 10pt;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .item-detail {
+      font-size: 9.5pt;
+      color: #555;
+      line-height: 1.5;
+      margin-top: 2pt;
+    }
+
+    .item-address {
+      font-size: 9pt;
+      color: #777;
+      margin-top: 1pt;
+    }
+
+    /* === FLIGHT / TRAIN BLOCK === */
+    .transport-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 6pt 0 4pt;
+      padding: 8pt 0;
+    }
+
+    .transport-point {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .transport-point.right {
+      text-align: right;
+    }
+
+    .transport-code {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .transport-time {
+      font-size: 9.5pt;
+      color: #555;
+    }
+
+    .transport-arrow {
+      font-size: 14pt;
+      color: #bbb;
+      padding: 0 8pt;
+    }
+
+    .transport-meta {
+      font-size: 9pt;
+      color: #777;
+      margin-top: 2pt;
+    }
+
+    /* === MEAL DIVIDER === */
+    .meal-divider {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2pt;
+      color: #aaa;
+      margin: 14pt 0 8pt;
+      padding-top: 6pt;
+      border-top: 0.5pt solid #ddd;
+    }
+
+    /* === SECTION DIVIDER === */
+    .section-divider {
+      border: none;
+      border-top: 0.75pt solid #ccc;
+      margin: 18pt 0;
+    }
+
+    /* === QUICK REFERENCE === */
+    .ref-section {
+      margin-top: 0;
+    }
+
+    @media print {
+      .ref-section {
+        page-break-before: always;
+      }
+    }
+
+    .ref-header {
+      text-align: center;
+      padding: 20pt 0 16pt;
+      border-bottom: 2.5pt solid #1a1a1e;
+      margin-bottom: 18pt;
+    }
+
+    .ref-header h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 24pt;
+      font-weight: 700;
+    }
+
+    .ref-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20pt;
+    }
+
+    .ref-card {
+      page-break-inside: avoid;
+    }
+
+    .ref-card h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 13pt;
+      font-weight: 700;
+      border-bottom: 1pt solid #1a1a1e;
+      padding-bottom: 3pt;
+      margin-bottom: 7pt;
+    }
+
+    .ref-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5pt;
+      padding: 3.5pt 0;
+      border-bottom: 0.5pt solid #eee;
+    }
+
+    .ref-row:last-child { border-bottom: none; }
+
+    .ref-row strong {
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-right: 8pt;
+    }
+
+    .ref-row span {
+      color: #555;
+      text-align: right;
+    }
+
+    .ref-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ref-list li {
+      font-size: 9.5pt;
+      padding: 3pt 0;
+      border-bottom: 0.5pt solid #eee;
+      color: #444;
+      line-height: 1.45;
+    }
+
+    .ref-list li:last-child { border-bottom: none; }
+
+    .emergency-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6pt;
+      margin-top: 4pt;
+    }
+
+    .emergency-item {
+      text-align: center;
+      padding: 6pt;
+      border: 1pt solid #ccc;
+    }
+
+    .emergency-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22pt;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .emergency-label {
+      font-size: 8pt;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.5pt;
+    }
+
+    /* === NOTES AREA === */
+    .notes-area {
+      margin-top: 20pt;
+      border: 1pt solid #ddd;
+      padding: 12pt 14pt;
+      min-height: 100pt;
+      page-break-inside: avoid;
+    }
+
+    .notes-area h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 12pt;
+      font-weight: 600;
+      color: #aaa;
+      margin-bottom: 6pt;
+    }
+
+    .notes-lines {
+      background-image: repeating-linear-gradient(
+        transparent,
+        transparent 19pt,
+        #eee 19pt,
+        #eee 20pt
+      );
+      min-height: 80pt;
+    }
+
+    /* === FOOTER === */
+    .page-footer {
+      text-align: center;
+      font-size: 7.5pt;
+      color: #bbb;
+      text-transform: uppercase;
+      letter-spacing: 2pt;
+      margin-top: 24pt;
+      padding-top: 10pt;
+      border-top: 0.5pt solid #ddd;
+    }
+
+    /* === PRINT OVERRIDES === */
+    @media print {
+      body { font-size: 10pt; }
+      .no-print { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      .item-confirmed { background: #f5f5f3 !important; }
+    }
+
+    /* === SCREEN PREVIEW === */
+    @media screen {
+      body {
+        max-width: 7.5in;
+        margin: 0 auto;
+        padding: 0.5in;
+        background: #f0efec;
+      }
+
+      .page {
+        background: white;
+        padding: 0.65in 0.7in;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+      }
+
+      .print-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #1a1a1e;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 99px;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        z-index: 100;
+        transition: transform 0.15s;
+      }
+
+      .print-btn:hover { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print Itinerary</button>
+
+<!-- ==================== PAGE 1: ITINERARY ==================== -->
+<div class="page">
+
+  <div class="cover">
+    <div class="cover-eyebrow">Greenman Family</div>
+    <h1>Paris</h1>
+    <div class="cover-sub">April 6–10, 2026</div>
+  </div>
+
+  <div class="hotel-strip">
+    <div class="hotel-strip-main">
+      <h2>Maison Breguet</h2>
+      <p>8 Rue Breguet, 75011 Paris · 5-star boutique</p>
+      <p>Metro: Breguet-Sabin (Line 5, 1 min) · Bastille (Lines 1/5/8, 2 min)</p>
+    </div>
+    <div class="hotel-strip-contact">
+      <strong>+33 1 58 30 32 31</strong>
+      Check-in: 3:00 PM · On-site restaurant
+    </div>
+  </div>
+
+  <!-- ===== DAY 1: MONDAY APRIL 6 ===== -->
+  <div class="day">
+    <div class="day-header">
+      <div class="day-number">6</div>
+      <div class="day-meta">
+        <div class="day-name">Monday</div>
+        <div class="day-date">April 6, 2026 · Arrival Day</div>
+      </div>
+    </div>
+
+    <div class="item item-confirmed">
+      <div class="item-label">Confirmed · TGV</div>
+      <h3>Le Creusot → Paris Gare de Lyon</h3>
+      <div class="transport-block">
+        <div class="transport-point">
+          <span class="transport-code">Le Creusot</span>
+          <span class="transport-time">10:46 AM</span>
+        </div>
+        <span class="transport-arrow">→</span>
+        <div class="transport-point right">
+          <span class="transport-code">Gare de Lyon</span>
+          <span class="transport-time">12:08 PM</span>
+        </div>
+      </div>
+      <div class="transport-meta">TGV INOUI N° 6612 · Coach 6, Seat 634 · 1h 22m</div>
+      <p class="item-detail" style="margin-top:6pt">Leave St Sernin du Plain by 9:45 AM — Le Creusot TGV station is ~35 min drive.</p>
+    </div>
+
+    <div class="item">
+      <h3>Gare de Lyon → Hotel</h3>
+      <p>Taxi with car seat (~€15–20, 10 min) is the best option with bags and kids. Book G7 Famille (+33 1 47 39 80 00) or Taxi Bambino in advance. Metro alternative: Line 1 dir. Nation → Bastille (3 stops).</p>
+    </div>
+
+    <div class="item">
+      <h3>Check In · Maison Breguet</h3>
+      <p>Standard check-in 3:00 PM. They'll hold luggage if you arrive early. Settle in, explore the 11th arrondissement.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Afternoon · Kids</div>
+      <h3>Place des Vosges + Le Marais Toy Stores</h3>
+      <p>Walk to Place des Vosges (10 min) — Paris's oldest planned square, beautiful arcades, kids can run in the park. Then wander into the Marais for toy stores:<br>
+      <strong>Le Petit Souk</strong> — curated, quirky games, French brands (10-min walk from hotel)<br>
+      <strong>Mandorla Palace</strong> — treasure trove of toys, games, illustrated books (34 Rue François Miron, 75004)<br>
+      <strong>Le FanFans</strong> — magic tricks, classic games, metal carousels (near Rue de Rivoli)</p>
+    </div>
+
+    <div class="meal-divider">Dinner</div>
+
+    <div class="item">
+      <p><strong>Café des Anges</strong> — neighborhood bistro, casual, easy first night<br>
+      <strong>Paris Hanoi</strong> — Vietnamese, great pho and banh mi, kids love it<br>
+      <strong>Hotel Restaurant</strong> — glass-roof dining room, zero commute after travel</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ===== DAY 2: TUESDAY APRIL 7 ===== -->
+  <div class="day">
+    <div class="day-header">
+      <div class="day-number">7</div>
+      <div class="day-meta">
+        <div class="day-name">Tuesday</div>
+        <div class="day-date">April 7, 2026</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Morning</div>
+      <h3>Musée d'Orsay</h3>
+      <p>Impressionist masterpieces in a stunning old train station. Monet, Renoir, Van Gogh. Less overwhelming than the Louvre for kids. €16 adults, free under 18. Book timed entry online.</p>
+      <p class="item-address">1 Rue de la Légion d'Honneur, 75007</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Afternoon</div>
+      <h3>Jardin du Luxembourg</h3>
+      <p>Sailboats on the pond (€5), large playground, puppet theater (€6, marionnettes). Free entry. The kids will not want to leave.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Near Luxembourg · Kids</div>
+      <h3>Otipi Toy Store</h3>
+      <p>Eco-friendly, educational toys near the garden. Good stop on the way out. (Near Metro Saint-Placide, 75006)</p>
+    </div>
+
+    <div class="meal-divider">Lunch</div>
+
+    <div class="item">
+      <p><strong>Rue de Seine / Rue de Buci</strong> — cafés, bakeries, market stalls, 5 min from garden<br>
+      <strong>Boulangerie Poilâne</strong> — famous bread, great cookies (8 Rue du Cherche-Midi)<br>
+      <strong>Amorino</strong> — flower-shaped gelato, kids will be ecstatic</p>
+    </div>
+
+    <div class="meal-divider">Dinner</div>
+
+    <div class="item item-confirmed">
+      <div class="item-label">Confirmed · Reservation</div>
+      <h3>Brasserie Rosie-Lou</h3>
+      <p><strong>Tuesday April 7 at 6:45 PM · Party of 8</strong></p>
+      <p class="item-detail">1 Rue du Faubourg Poissonnière, 75009 Paris</p>
+      <p class="item-detail">Phone: +33 1 42 36 00 20</p>
+      <p class="item-detail">Metro: Line 8 dir. Créteil from Bastille → Bonne Nouvelle (5 stops, ~12 min)</p>
+      <p class="item-detail" style="margin-top:4pt"><em>Free cancellation until April 7 at 6:45 AM. After that, card will be charged.</em></p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ===== DAY 3: WEDNESDAY APRIL 8 ===== -->
+  <div class="day">
+    <div class="day-header">
+      <div class="day-number">8</div>
+      <div class="day-meta">
+        <div class="day-name">Wednesday</div>
+        <div class="day-date">April 8, 2026</div>
+      </div>
+    </div>
+
+    <div class="item item-confirmed">
+      <div class="item-label">Confirmed · Paid (€316)</div>
+      <h3>Louvre Early Access + Seine Cruise</h3>
+      <p><strong>Wednesday April 8 at 9:30 AM</strong></p>
+      <p class="item-detail">2 adults × €93 = €186 · 2 children (3–17) × €65 = €130</p>
+      <p class="item-detail">Includes: Early access with direct route to Mona Lisa + Seine River Cruise</p>
+      <p class="item-detail">Metro: Line 1 dir. La Défense from Bastille → Palais Royal–Musée du Louvre (4 stops, ~10 min). Arrive by 9:15 AM.</p>
+      <p class="item-detail" style="margin-top:4pt"><strong>Tips with kids</strong>: Don't try to see everything. Pick 2–3 highlights: Winged Victory, Egyptian mummies, Napoleon III apartments. Plan ~2–3 hours max.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Afternoon</div>
+      <h3>Seine River Cruise</h3>
+      <p>Included with Louvre tickets. ~1 hr on the boat — see Notre-Dame, the Eiffel Tower, and the bridges without walking.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Optional · Pick one</div>
+      <h3>Eiffel Tower or Cité des Sciences</h3>
+      <p><strong>Eiffel Tower</strong>: Natural add-on since you'll see it from the boat. Summit: ~€29 adults, €7 kids 4–11. Or just admire from Trocadéro — arguably a better view and free.<br>
+      <strong>Cité des Sciences</strong> (rainy-day backup): Enormous science museum with dedicated Cité des Enfants sections (ages 2–7 and 5–12). Hands-on, genuinely fun. €12/person. Book timed slots. (30 Ave Corentin Cariou, 75019. Metro Line 5 dir. Bobigny → Porte de Pantin)</p>
+    </div>
+
+    <div class="meal-divider">Dinner</div>
+
+    <div class="item">
+      <p><strong>Le Bouillon Chartier</strong> — Paris institution since 1896. Belle époque hall. ~€15/person. No reservations, short line. (7 Rue du Faubourg Montmartre, 75009)<br>
+      <strong>Chez HE</strong> — Chinese restaurant with 350 sqm basement playground for ages 2–12. Great food AND kids can play. Secret weapon for decompressing.<br>
+      <strong>Brasserie Martin</strong> — stylish 11th arr., seasonal French, not too formal for kids</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ===== DAY 4: THURSDAY APRIL 9 ===== -->
+  <div class="day">
+    <div class="day-header">
+      <div class="day-number">9</div>
+      <div class="day-meta">
+        <div class="day-name">Thursday</div>
+        <div class="day-date">April 9, 2026</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Morning</div>
+      <h3>Montmartre</h3>
+      <p>Hilly, charming, village-feel neighborhood. Sacré-Cœur (free, dome €7), Place du Tertre artists' square (caricatures ~€20–30), funicular (€2.15), Wall of Love. Metro: Line 5 dir. Bobigny → Gare du Nord, Line 2 dir. Porte Dauphine → Anvers.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Afternoon ideas</div>
+      <h3>Parc des Buttes-Chaumont / Canal Saint-Martin / Paris Zoo</h3>
+      <p><strong>Buttes-Chaumont</strong>: wild hilly park with a temple on a rocky island. Great for running around, less touristy.<br>
+      <strong>Canal Saint-Martin</strong>: walk along the locks, watch boats, trendy cafés.<br>
+      <strong>Paris Zoo</strong> (Parc Zoologique): modern zoo in Bois de Vincennes with 5 biozones. Family pass €68 (2 adults + 2 kids). Plan 2+ hours. Metro Line 8 dir. Créteil → Porte Dorée (6 stops).</p>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Toy Store · Montmartre area</div>
+      <h3>Si Tu Veux (Jouer)</h3>
+      <p>Historic toy store in Passage Jouffroy, a beautiful covered passage. Traditional European and wooden toys, dress-up costumes. (Passage Jouffroy, 75009 — near Montmartre)</p>
+    </div>
+
+    <div class="meal-divider">Last Dinner in Paris</div>
+
+    <div class="item">
+      <p><strong>Chez Janou</strong> — famous giant chocolate mousse bowl served family-style. Book ahead. (2 Rue Roger Verlomme, 75003, 10 min walk)<br>
+      <strong>Le Relais de l'Entrecôte</strong> — no menu, just steak-frites with legendary secret sauce. Short line. (20 Rue Marbeuf, 75008)<br>
+      <strong>Septime</strong> — special-occasion tasting menu. Date night if you can arrange a sitter. (80 Rue de Charonne, 5 min walk)</p>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ===== DAY 5: FRIDAY APRIL 10 ===== -->
+  <div class="day">
+    <div class="day-header">
+      <div class="day-number">10</div>
+      <div class="day-meta">
+        <div class="day-name">Friday</div>
+        <div class="day-date">April 10, 2026 · Departure Day</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="item-label-suggestion">Morning</div>
+      <h3>Last Morning in Paris</h3>
+      <p>No agenda. Get croissants, sit in a park, soak it in. Possible: Notre-Dame area + Île Saint-Louis for Berthillon ice cream, or Shakespeare & Company bookshop (37 Rue de la Bûcherie).</p>
+    </div>
+
+    <div class="item item-confirmed">
+      <div class="item-label">Confirmed · Flight Home</div>
+      <h3>Paris Orly → Newark</h3>
+      <div class="transport-block">
+        <div class="transport-point">
+          <span class="transport-code">ORY</span>
+          <span class="transport-time">6:50 PM</span>
+        </div>
+        <span class="transport-arrow">→</span>
+        <div class="transport-point right">
+          <span class="transport-code">EWR</span>
+          <span class="transport-time">9:00 PM</span>
+        </div>
+      </div>
+      <div class="transport-meta">French bee BF720 · Conf G958GB</div>
+      <p class="item-detail" style="margin-top:6pt"><strong>Leave hotel by 3:00 PM.</strong> Taxi/Uber to Orly ~€35 (book car seat taxi in advance). Be at airport by ~4:00 PM.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">Paris · April 2026 · Greenman Family</div>
+
+</div>
+
+<!-- ==================== PAGE 2: QUICK REFERENCE ==================== -->
+<div class="page ref-section">
+
+  <div class="ref-header">
+    <h2>Quick Reference</h2>
+  </div>
+
+  <div class="ref-columns">
+
+    <div class="ref-card">
+      <h3>Metro from Bastille</h3>
+      <div class="ref-row"><strong>Louvre</strong><span>Line 1 dir. La Défense → Palais Royal (4 stops)</span></div>
+      <div class="ref-row"><strong>Eiffel Tower</strong><span>Line 8 dir. Balard → École Militaire (7 stops)</span></div>
+      <div class="ref-row"><strong>Musée d'Orsay</strong><span>Line 1 dir. La Défense → Concorde, walk 8 min</span></div>
+      <div class="ref-row"><strong>Notre-Dame</strong><span>Line 1 dir. La Défense → Hôtel de Ville (2 stops)</span></div>
+      <div class="ref-row"><strong>Montmartre</strong><span>Line 5 → Gare du Nord, Line 2 → Anvers</span></div>
+      <div class="ref-row"><strong>Luxembourg</strong><span>Line 1 → Châtelet, RER B dir. Robinson (1 stop)</span></div>
+      <div class="ref-row"><strong>Cité des Sciences</strong><span>Line 5 dir. Bobigny → Porte de Pantin</span></div>
+    </div>
+
+    <div class="ref-card">
+      <h3>Emergency Numbers</h3>
+      <div class="emergency-grid">
+        <div class="emergency-item">
+          <div class="emergency-num">112</div>
+          <div class="emergency-label">European Emergency</div>
+        </div>
+        <div class="emergency-item">
+          <div class="emergency-num">15</div>
+          <div class="emergency-label">SAMU (Medical)</div>
+        </div>
+        <div class="emergency-item">
+          <div class="emergency-num">17</div>
+          <div class="emergency-label">Police</div>
+        </div>
+        <div class="emergency-item">
+          <div class="emergency-num">18</div>
+          <div class="emergency-label">Fire / Pompiers</div>
+        </div>
+      </div>
+      <div style="margin-top:8pt; font-size:9pt; color:#555">
+        <strong>US Embassy</strong>: 2 Ave Gabriel, 75008<br>
+        Emergency: +33 1 43 12 22 22
+      </div>
+    </div>
+
+    <div class="ref-card">
+      <h3>Car Seat Taxi Services</h3>
+      <ul class="ref-list">
+        <li><strong>G7 Famille</strong> — biggest Paris taxi co. G7 app or +33 1 47 39 80 00. Select "G7 Family"</li>
+        <li><strong>Taxi Bambino</strong> — family specialist. taxibambino.com. Book 24h ahead</li>
+        <li><strong>Family Transport Paris</strong> — Mercedes vans, up to 3 car seats. familytransportparis.com</li>
+        <li><strong>Marcel</strong> — app-based, select "Family" option. marcel.cab</li>
+        <li><strong>Taxi Baby Seat</strong> — minivans, 1–8 passengers. taxibabyseat.com</li>
+      </ul>
+    </div>
+
+    <div class="ref-card">
+      <h3>Metro Tips</h3>
+      <ul class="ref-list">
+        <li><strong>Navigo Easy</strong>: reloadable card, t+ tickets ~€2.15 each</li>
+        <li><strong>Under 4</strong>: free · <strong>Ages 4–9</strong>: half price · <strong>10+</strong>: full price</li>
+        <li><strong>Carnet of 10</strong>: buy 10 tickets at once for a discount</li>
+        <li>Many stations lack elevators. RER and bus are more accessible with a stroller</li>
+        <li>Watch for pickpockets on Line 1, at Châtelet, and on RER B</li>
+      </ul>
+    </div>
+
+    <div class="ref-card">
+      <h3>Money & Tipping</h3>
+      <ul class="ref-list">
+        <li>Euro (EUR). ~1 USD = 0.90–0.95 EUR</li>
+        <li>Visa/Mastercard widely accepted. Have cash for markets</li>
+        <li>Use bank ATMs (BNP, Crédit Agricole). Avoid Euronet</li>
+        <li>Tipping: service included. Rounding up is appreciated, not expected</li>
+        <li>Tax-free shopping on purchases over €100 — ask for détaxe form</li>
+      </ul>
+    </div>
+
+    <div class="ref-card">
+      <h3>Eating with Kids</h3>
+      <ul class="ref-list">
+        <li>Lunch 12–2 PM, dinner 7:30–9 PM. Kitchens close between meals</li>
+        <li>Menus enfants at most restaurants (~€8–12)</li>
+        <li>Boulangeries: your best friend. Pain au chocolat = dream breakfast</li>
+        <li>"Une carafe d'eau" = free tap water</li>
+        <li>Bread comes with every meal, free</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="notes-area">
+    <h3>Notes</h3>
+    <div class="notes-lines"></div>
+  </div>
+
+  <div class="page-footer">Paris · April 2026 · Greenman Family</div>
+
+</div>
+
+</body>
+</html>
