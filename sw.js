@@ -1,4 +1,4 @@
-const CACHE_NAME = 'france-trip-v16';
+const CACHE_NAME = 'france-trip-v17';
 const BASE = '/france-trip-2026/';
 const ASSETS = [
   BASE,
