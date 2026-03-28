@@ -188,3 +188,22 @@ window.showMyLocation = function() {
     { enableHighAccuracy: true, timeout: 10000 }
   );
 };
+
+// === Places Filter ===
+const filterBtns = document.querySelectorAll('.filter-btn');
+const placeCards = document.querySelectorAll('.place-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    placeCards.forEach(card => {
+      if (filter === 'all' || card.dataset.day === filter) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});

@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#1a1a2e">
+  <meta name="theme-color" content="#0d1b2a">
   <title>France 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
 </head>
@@ -14,7 +17,7 @@
 
 <header>
   <div class="header-top">
-    <h1>France 2026</h1>
+    <h1><span>France</span> 2026</h1>
     <div class="countdown" id="countdown"></div>
   </div>
 </header>
@@ -22,6 +25,7 @@
 <nav id="tabs">
   <button class="active" data-tab="schedule">Schedule</button>
   <button data-tab="hotel">Paris</button>
+  <button data-tab="places">Places</button>
   <button data-tab="phrases">Phrases</button>
   <button data-tab="yarn">Yarn</button>
   <button data-tab="essentials">Essentials</button>
@@ -583,14 +587,20 @@
       </div>
     </div>
 
-    <div class="card suggestion-card">
-      <h3>Afternoon: Seine Cruise</h3>
-      <p class="card-desc">After Montmartre, head to the river for a relaxed hour on the water. See Notre-Dame, the Eiffel Tower, and the bridges from the boat. Good for tired kids after a big morning.</p>
-      <p class="card-detail"><strong>Getting there from Montmartre</strong>: Metro Line 2 from Anvers &rarr; Charles de Gaulle&ndash;&Eacute;toile, transfer to Line 6 &rarr; Bir-Hakeim, short walk to dock (~35 min).</p>
-      <p class="card-detail"><strong>Book in advance</strong>: <a class="maps-link" href="https://www.bateauxparisiens.com" target="_blank" rel="noopener">bateauxparisiens.com</a> &middot; ~1 hour on the water</p>
-      <p class="card-address">Bateaux Parisiens &middot; Port de la Bourdonnais, 75007</p>
-      <p class="card-detail"><strong>After cruise</strong>: Taxi recommended back to hotel after a full day (~20 min).</p>
-      <span class="card-tag outdoor">Outdoor</span> <span class="card-tag kids">Kids</span>
+    <div class="card confirmed-card">
+      <div class="confirmed-label">BOOK THIS &mdash; Afternoon</div>
+      <h3>Seine River Cruise</h3>
+      <p class="card-desc">An hour on the river after Montmartre &mdash; see Notre-Dame, the Eiffel Tower, and 37 bridges from the water. Perfect for tired kids after a big morning on the hill.</p>
+      <p class="card-detail" style="margin-top:6px"><strong>Operator:</strong> Bateaux Parisiens</p>
+      <p class="card-detail"><strong>Dock:</strong> Port de la Bourdonnais, 75007 &mdash; at the foot of the Eiffel Tower</p>
+      <p class="card-detail"><strong>Duration:</strong> ~1 hour &middot; Runs daily, multiple departures</p>
+      <p class="card-detail" style="margin-top:6px"><strong>Getting there from Montmartre:</strong> Metro Line 2 from Anvers &rarr; Charles de Gaulle&ndash;&Eacute;toile, transfer to Line 6 &rarr; Bir-Hakeim (~35 min). Short walk to dock.</p>
+      <p class="card-detail"><strong>After cruise:</strong> Taxi back to hotel &mdash; ~20 min, no car seat required for short city trips.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Bateaux+Parisiens+Port+de+la+Bourdonnais+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+        <a class="book-btn" href="https://www.bateauxparisiens.com" target="_blank" rel="noopener">&#127881; Book tickets</a>
+      </div>
+      <span class="card-tag outdoor" style="margin-top:12px">Outdoor</span> <span class="card-tag kids">Kids</span>
     </div>
 
     <div class="collapsible-section">
@@ -599,6 +609,14 @@
         <span class="toggle-icon">+</span>
       </button>
       <div class="section-body">
+        <div class="card suggestion-card">
+          <h3>Paris Zoo (Parc Zoologique)</h3>
+          <p class="card-desc">Modern zoo in Bois de Vincennes with 5 biozones &mdash; Africa, Patagonia, Sahel-Sudan, Europe, and the Amazon. Plan at least 2 hours. Family pass: &euro;68 (2 adults + 2 kids). Open daily 9:30 AM.</p>
+          <p class="card-detail">Metro Line 8 dir. Cr&eacute;teil from Bastille &rarr; Porte Dor&eacute;e (6 stops, ~15 min)</p>
+          <p class="card-address">Avenue Daumesnil, 75012</p>
+          <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Parc+Zoologique+de+Paris+Vincennes" target="_blank" rel="noopener">Open in Google Maps</a>
+          <span class="card-tag kids">Kids</span> <span class="card-tag outdoor">Outdoor</span>
+        </div>
         <div class="card suggestion-card">
           <h3>Parc des Buttes-Chaumont</h3>
           <p class="card-desc">Wild, hilly park with a temple on a rocky island. Great for running around. Less touristy.</p>
@@ -1370,6 +1388,306 @@
     <h3>Notes</h3>
     <textarea class="note-field" id="note-essentials" placeholder="Insurance details, doctor info, important numbers..."></textarea>
   </div>
+</div>
+
+<!-- ===================== PLACES ===================== -->
+<div class="section" id="places">
+
+  <p class="places-header">Every location in this trip, linked to Google Maps. Tap a card to navigate.</p>
+
+  <div class="places-filter" id="places-filter">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="hotel">Hotel</button>
+    <button class="filter-btn" data-filter="mon">Mon 6</button>
+    <button class="filter-btn" data-filter="tue">Tue 7</button>
+    <button class="filter-btn" data-filter="wed">Wed 8</button>
+    <button class="filter-btn" data-filter="thu">Thu 9</button>
+    <button class="filter-btn" data-filter="fri">Fri 10</button>
+    <button class="filter-btn" data-filter="yarn">Yarn</button>
+  </div>
+
+  <!-- HOTEL -->
+  <div class="place-card" data-day="hotel">
+    <div class="place-day-badge">Hotel &mdash; Apr 6&ndash;10</div>
+    <h3>Maison Breguet</h3>
+    <p class="place-meta">8 Rue Breguet, 75011 &middot; 5-star boutique</p>
+    <p class="place-meta">Metro: Breguet-Sabin (Line 5, 1 min) &middot; Bastille (Lines 1/5/8, 2 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Maison+Breguet+8+Rue+Breguet+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="tel:+33158303231">&#128222; Call Hotel</a>
+    </div>
+  </div>
+
+  <!-- MONDAY -->
+  <div class="place-card" data-day="mon">
+    <div class="place-day-badge">Monday Apr 6 &mdash; Arrival</div>
+    <h3>Paris Gare de Lyon</h3>
+    <p class="place-meta">TGV arrival 12:08 PM &middot; Place Louis-Armand, 75012</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Paris+Gare+de+Lyon" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="mon">
+    <div class="place-day-badge">Monday Apr 6 &mdash; Afternoon</div>
+    <h3>Place des Vosges</h3>
+    <p class="place-meta">Paris's oldest planned square &middot; 75004 &middot; 15-min walk from hotel</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Place+des+Vosges+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="mon">
+    <div class="place-day-badge">Monday Apr 6 &mdash; Dinner</div>
+    <h3>Caf&eacute; des Anges</h3>
+    <p class="place-meta">66 Rue de la Roquette, 75011 &middot; 8-min walk &middot; No reservation needed</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Cafe+des+Anges+66+Rue+de+la+Roquette+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="mon">
+    <div class="place-day-badge">Monday Apr 6 &mdash; Dinner alt</div>
+    <h3>Paris Hanoi</h3>
+    <p class="place-meta">41 Rue Sainte-Croix de la Bretonnerie, 75004 &middot; Vietnamese &middot; 18-min walk</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Paris+Hanoi+41+Rue+Sainte-Croix+de+la+Bretonnerie" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <!-- TUESDAY -->
+  <div class="place-card" data-day="tue">
+    <div class="place-day-badge">Tuesday Apr 7 &mdash; Morning</div>
+    <h3>Mus&eacute;e d&rsquo;Orsay</h3>
+    <p class="place-meta">Esplanade Val&eacute;ry Giscard d&rsquo;Estaing, 75007 &middot; Book timed entry at musee-orsay.fr</p>
+    <p class="place-meta">Metro Line 8 from Br&eacute;guet-Sabin &rarr; Concorde, RER C &rarr; Mus&eacute;e d&rsquo;Orsay (~25 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Musee+d'Orsay+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="https://www.musee-orsay.fr" target="_blank" rel="noopener">&#127881; Book tickets</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="tue">
+    <div class="place-day-badge">Tuesday Apr 7 &mdash; Afternoon</div>
+    <h3>Jardin du Luxembourg</h3>
+    <p class="place-meta">75006 Paris &middot; Sailboats, playground, puppet theater</p>
+    <p class="place-meta">Walk from d&rsquo;Orsay along the Seine (~30 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Jardin+du+Luxembourg+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="tue">
+    <div class="place-day-badge">Tuesday Apr 7 &mdash; Dinner &mdash; BOOKED 6:45 PM</div>
+    <h3>Brasserie Rosie-Lou</h3>
+    <p class="place-meta">31 Boulevard Bonne Nouvelle, 75002 &middot; Party of 8</p>
+    <p class="place-meta">Metro Line 4 from Saint-Sulpice &rarr; Strasbourg-Saint-Denis (~20 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Brasserie+Rosie-Lou+31+Boulevard+Bonne+Nouvelle+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="tel:+33142360020">&#128222; +33 1 42 36 00 20</a>
+    </div>
+  </div>
+
+  <!-- WEDNESDAY -->
+  <div class="place-card" data-day="wed">
+    <div class="place-day-badge">Wednesday Apr 8 &mdash; Morning &mdash; BOOKED</div>
+    <h3>Louvre Museum</h3>
+    <p class="place-meta">Carrousel Arch entrance, 99 Rue de Rivoli, 75001 &middot; 9:30 AM</p>
+    <p class="place-meta">Metro Line 8 &rarr; Op&eacute;ra, Line 7 &rarr; Palais Royal (~20 min) &middot; Arrive 9:10 AM</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Louvre+Museum+Carrousel+Arch+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="wed">
+    <div class="place-day-badge">Wednesday Apr 8 &mdash; Afternoon</div>
+    <h3>La Droguerie</h3>
+    <p class="place-meta">9&ndash;11 Rue du Jour, 75001 &middot; 10-min walk from Louvre &middot; Open until 7 PM</p>
+    <p class="place-meta">Legendary haberdashery &mdash; yarn sold by weight, walls of rainbow skeins</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=La+Droguerie+9+rue+du+Jour+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="https://www.ladroguerie.com/paris/" target="_blank" rel="noopener">Website</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="wed">
+    <div class="place-day-badge">Wednesday Apr 8 &mdash; Dinner</div>
+    <h3>Brasserie Martin</h3>
+    <p class="place-meta">24 Rue Saint-Ambroise, 75011 &middot; 12-min walk from hotel &middot; Book ahead</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Brasserie+Martin+24+Rue+Saint-Ambroise+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="tel:+33148053436">&#128222; +33 1 48 05 34 36</a>
+    </div>
+  </div>
+
+  <!-- THURSDAY -->
+  <div class="place-card" data-day="thu">
+    <div class="place-day-badge">Thursday Apr 9 &mdash; Morning</div>
+    <h3>Sacr&eacute;-C&oelig;ur Basilica</h3>
+    <p class="place-meta">35 Rue du Chevalier de la Barre, 75018 &middot; Free entry</p>
+    <p class="place-meta">Metro Line 8 &rarr; Op&eacute;ra, Line 2 &rarr; Anvers (~30 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Sacre-Coeur+Basilica+Montmartre+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="thu">
+    <div class="place-day-badge">Thursday Apr 9 &mdash; Morning</div>
+    <h3>March&eacute; Saint-Pierre</h3>
+    <p class="place-meta">2 Rue Charles Nodier, 75018 &middot; At the foot of Montmartre</p>
+    <p class="place-meta">Multi-floor fabric + notions market &middot; Mon&ndash;Fri until 6:30 PM</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Marche+Saint-Pierre+2+Rue+Charles+Nodier+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="thu">
+    <div class="place-day-badge">Thursday Apr 9 &mdash; Afternoon option</div>
+    <h3>Paris Zoo (Parc Zoologique)</h3>
+    <p class="place-meta">Avenue Daumesnil, 75012 &middot; Open daily 9:30 AM &middot; Family pass &euro;68</p>
+    <p class="place-meta">5 biozones &middot; Plan 2+ hours &middot; Metro Line 8 &rarr; Porte Dor&eacute;e (6 stops)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Parc+Zoologique+de+Paris+Vincennes" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="https://www.parczoologiquedeparis.fr" target="_blank" rel="noopener">Website</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="thu">
+    <div class="place-day-badge">Thursday Apr 9 &mdash; Afternoon &mdash; BOOK THIS</div>
+    <h3>Bateaux Parisiens &mdash; Seine Cruise</h3>
+    <p class="place-meta">Port de la Bourdonnais, 75007 &middot; At the foot of the Eiffel Tower</p>
+    <p class="place-meta">Metro Line 2 &rarr; CDG-&Eacute;toile, Line 6 &rarr; Bir-Hakeim (~35 min from Montmartre)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Bateaux+Parisiens+Port+de+la+Bourdonnais+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="https://www.bateauxparisiens.com" target="_blank" rel="noopener">&#127881; Book tickets</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="thu">
+    <div class="place-day-badge">Thursday Apr 9 &mdash; Dinner</div>
+    <h3>Chez Janou</h3>
+    <p class="place-meta">2 Rue Roger Verlomme, 75003 &middot; 10-min walk from hotel &middot; Book ~1 week ahead</p>
+    <p class="place-meta">Giant chocolate mousse bowl, Proven&ccedil;al bistro</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Chez+Janou+2+Rue+Roger+Verlomme+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="tel:+33142722841">&#128222; +33 1 42 72 28 41</a>
+    </div>
+  </div>
+
+  <!-- FRIDAY -->
+  <div class="place-card" data-day="fri">
+    <div class="place-day-badge">Friday Apr 10 &mdash; Morning &mdash; BOOKED</div>
+    <h3>Eiffel Tower</h3>
+    <p class="place-meta">Avenue Gustave Eiffel, 75007 &middot; Guided tour 9:00 AM &middot; Leave hotel 8:15 AM</p>
+    <p class="place-meta">Metro Line 8 &rarr; &Eacute;cole Militaire (~15 min), then 10-min walk</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Eiffel+Tower+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="fri">
+    <div class="place-day-badge">Friday Apr 10 &mdash; Late Morning</div>
+    <h3>Notre-Dame Cathedral</h3>
+    <p class="place-meta">6 Parvis Notre-Dame, 75004 &middot; Check notredamedeparis.fr for timed entry</p>
+    <p class="place-meta">Metro Line 6 from Bir-Hakeim &rarr; Saint-Michel Notre-Dame (~15 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Notre-Dame+Cathedral+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="https://www.notredamedeparis.fr" target="_blank" rel="noopener">Check entry</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="fri">
+    <div class="place-day-badge">Friday Apr 10 &mdash; Late Morning</div>
+    <h3>Berthillon</h3>
+    <p class="place-meta">31 Rue Saint-Louis en l&rsquo;&Icirc;le, 75004 &middot; 5-min walk from Notre-Dame</p>
+    <p class="place-meta">Paris&rsquo;s best ice cream &middot; Open Fri 10 AM&ndash;8 PM</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Berthillon+31+Rue+Saint-Louis+en+l'Ile+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="fri">
+    <div class="place-day-badge">Friday Apr 10 &mdash; Late Morning</div>
+    <h3>Shakespeare &amp; Company</h3>
+    <p class="place-meta">37 Rue de la B&ucirc;cherie, 75005 &middot; 5-min walk from Notre-Dame</p>
+    <p class="place-meta">Iconic English bookshop &middot; Open Fri 10 AM&ndash;8 PM</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Shakespeare+and+Company+37+Rue+de+la+Bucherie+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="fri">
+    <div class="place-day-badge">Friday Apr 10 &mdash; Departure</div>
+    <h3>Paris Orly Airport (ORY)</h3>
+    <p class="place-meta">Leave hotel by 3:00 PM &middot; Flight BF720 departs 6:50 PM</p>
+    <p class="place-meta">Pre-booked car seat taxi recommended (~&euro;35, 45&ndash;60 min)</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Paris+Orly+Airport" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <!-- YARN SHOPS -->
+  <div class="place-card" data-day="yarn">
+    <div class="place-day-badge">Yarn &mdash; Paris</div>
+    <h3>La Droguerie</h3>
+    <p class="place-meta">9&ndash;11 Rue du Jour, 75001 &middot; Mon&ndash;Sat 10 AM&ndash;7 PM</p>
+    <p class="place-meta">House-brand yarn by weight, walls of rainbow skeins. Visiting Wednesday after Louvre.</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=La+Droguerie+9+rue+du+Jour+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+      <a class="book-btn" href="https://www.ladroguerie.com/paris/" target="_blank" rel="noopener">Website</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="yarn">
+    <div class="place-day-badge">Yarn &mdash; Paris</div>
+    <h3>Les Tricoteurs Volants</h3>
+    <p class="place-meta">22 Rue de la Fid&eacute;lit&eacute;, 75010 &middot; Near Gare de l&rsquo;Est</p>
+    <p class="place-meta">Best indie yarn shop in Paris. Natural fibers, French brands, hand-dyed.</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Les+Tricoteurs+Volants+22+rue+Fidelite+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="yarn">
+    <div class="place-day-badge">Yarn &mdash; Paris</div>
+    <h3>Lil Weasel</h3>
+    <p class="place-meta">1 Passage du Grand Cerf, 75002 &middot; Tue&ndash;Sat 10:30 AM&ndash;7 PM</p>
+    <p class="place-meta">~20 yarn brands organized by color, inside a beautiful covered passage.</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Lil+Weasel+Passage+Grand+Cerf+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="yarn">
+    <div class="place-day-badge">Yarn &mdash; Paris</div>
+    <h3>Entr&eacute;e des Fournisseurs</h3>
+    <p class="place-meta">8 Rue des Francs Bourgeois, 75003 &middot; Le Marais</p>
+    <p class="place-meta">Charming haberdashery. Yarn from basic to luxury + sewing + patterns.</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Entree+des+Fournisseurs+8+rue+Francs+Bourgeois+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="yarn">
+    <div class="place-day-badge">Yarn &mdash; Montmartre</div>
+    <h3>March&eacute; Saint-Pierre</h3>
+    <p class="place-meta">2 Rue Charles Nodier, 75018 &middot; Thu morning (Montmartre day)</p>
+    <p class="place-meta">Enormous multi-floor fabric market at the base of the hill.</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Marche+Saint-Pierre+2+Rue+Charles+Nodier+Paris" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
+  <div class="place-card" data-day="yarn">
+    <div class="place-day-badge">Yarn &mdash; Burgundy</div>
+    <h3>La Manufacture de Beaune</h3>
+    <p class="place-meta">81 Rue du Faubourg Saint-Nicolas, 21200 Beaune</p>
+    <p class="place-meta">Best yarn option in Beaune. Yarn, buttons, DIY kits, workshops.</p>
+    <div class="place-btn-row">
+      <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=La+Manufacture+Beaune+81+rue+Faubourg+Saint-Nicolas" target="_blank" rel="noopener">&#128205; Open in Maps</a>
+    </div>
+  </div>
+
 </div>
 
 <script src="app.js"></script>
